@@ -35,7 +35,6 @@ Atlas 可以直接接入现有 ROS2 技术栈，无需修改现有驱动。
 ```bash
 atlas_start
 ros2 launch atlas_dsil_bridge telemetry.launch.py
-```
 
 系统行为
 
