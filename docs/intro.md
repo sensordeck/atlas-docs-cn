@@ -1,47 +1,142 @@
----
-sidebar_position: 1
----
+# 天枢系列开发文档 | Atlas 开发文档
 
-# Tutorial Intro
+### 专为机器人设计的确定性传感器基础设施
 
-Let's discover **Docusaurus in less than 5 minutes**.
+为您的 IMU、GNSS 和 LiDAR 数据提供微秒级精度的统一时间基准。天枢系列 (Atlas) 是一个面向确定性机器人应用的高吞吐量传感器基础设施。
 
-## Getting Started
+Atlas 为现代机器人系统建立了一个硬件时间权威层和传感器基础设施层。
 
-Get started by **creating a new site**.
+它不再将传感器直接连接到机器人的计算平台，而是创建一个专用的集成层，用于同步传感器、聚合数据流，并提供一个统一的感知流水线。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Atlas 允许机器人团队将传感器集成视为基础设施，从而消除在不同机器人平台上重复进行定制集成的工作。
 
-### What you'll need
+## 为真实世界的机器人系统而设计
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+<img src="/_media/3cards.png" alt="Atlas 3cards" width="100%" title="Atlas 3cards">
 
-## Generate a new site
+## 🚀 快速上手 "Hello-World" (几分钟内集成ROS2)
 
-Generate a new Docusaurus site using the **classic template**.
+Atlas 可在几分钟内集成到您现有的 ROS2 技术栈中。
 
-The classic template will automatically be added to your project after you run the command:
-
+运行两个命令：
 ```bash
-npm init docusaurus@latest my-website classic
+atlas_start
+ros2 launch atlas_dsil_bridge telemetry.launch.py
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+### 您将看到
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+在几秒钟内，Atlas 的遥测数据就会出现在 ROS2 中：
 
-## Start your site
+- `/atlas/status` → 系统健康状态
+- `/atlas/pps` → timing 信号状态
+- `/atlas/sync_drift` → 实时同步误差
 
-Run the development server:
+### 这意味着什么
 
-```bash
-cd my-website
-npm run start
-```
+**使用 Atlas 之前**
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+- 独立的传感器时钟
+- 不可预测的 timing 偏移
+- 调试困难
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+**使用 Atlas 之后**
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- 统一的硬件时间基准
+- 确定性的传感器对齐
+- 可观测的同步状态
+
+### 零集成风险
+
+- 无需修改现有驱动程序
+- 无需改动传感器固件
+- 与您现有的 ROS2 技术栈无缝协作
+
+## Atlas 的核心能力
+
+### 1. 时间权威
+Atlas 为所有连接的传感器建立一个单一的硬件时间权威，确保整个感知技术栈获得一致且确定性的时间戳。
+
+### 2. 统一传感器集成
+Atlas 将异构的传感器接口和电源整合到一个结构化的单一集成层中，从而减少布线复杂性，并消除碎片化的电源架构。
+
+### 3. 系统可观测性与同步
+Atlas 通过统一的遥测层暴露 timing 关系、同步状态和传感器健康状况，从而在 ROS2 环境中实现完整的系统可观测性和确定性的数据对齐。
+
+### 4. 跨SKU基础设施
+Atlas 提供了一个可重用的传感器基础设施层，可跨不同的机器人平台和产品SKU进行扩展，消除了重复的集成工作，从而加快产品开发周期。
+
+## Atlas 架构
+
+Atlas 位于传感器域和机器人计算平台之间。
+
+传感器连接到 Atlas → Atlas 对它们进行同步和聚合 → 机器人计算平台接收到一个时间对齐、统一的感知流水线。
+
+## Atlas 快速入门指南
+
+Atlas 文档采用循序渐进的系统化结构设计。
+
+为全面理解 Atlas 的工作原理及其与机器人平台的集成方式，建议按以下顺序阅读：
+
+### 1. [传感器同步](/software/sensor-synchronization.md)
+理解 Atlas 所要解决的核心问题。
+
+了解为何独立的传感器时间戳会导致感知不一致、SLAM 不稳定以及调试困难。
+
+👉 **定义问题空间**
+
+### 2. [硬件架构](/hardware/fusion-platform.md)
+
+了解 Atlas 如何在物理层面实现同步。
+
+Atlas 建立了传感器域边界，统一了所有传感器的时间同步、供电和连接。
+
+👉 **定义系统架构**
+
+### 3. [DSIL 软件开发包](/software/dsil-sdk.md)
+了解 Atlas 硬件如何通过软件实现其价值。
+
+DSIL 将硬件时序转换为同步的 ROS2 时间戳、结构化遥测数据，并提供系统可观测性。
+
+👉 **定义基础设施层**
+
+### 4. [ROS2 集成](/software/ros2-integration.md)
+将 Atlas 部署到您现有的机器人技术栈中。
+
+Atlas 无需修改驱动程序或处理流程即可集成，实现快速部署。
+
+👉 [**定义集成模型**](/evaluation/oem-pilot.md)
+
+### 核心收益
+遵循此架构，Atlas 将传感器集成从：
+
+定制化工程工作 → 可部署的基础设施
+
+确定性传感器时序
+
+统一的传感器接口
+
+降低集成复杂度
+
+提升系统可观测性
+
+### 下一步
+理解 Atlas 的最佳方式是在您自己的系统中进行评估。
+
+👉 [**申请 Atlas 评估套件**](/software/evaluation-kit.md)
+
+### 集成资源
+Atlas 提供更多评估和部署材料：
+
+集成与部署常见问题
+
+-   👉 [集成问答FAQ](/evaluation/faq.md)
+-   👉 [下载中心](/evaluation/download.md)
+
+**Atlas 天枢系列**
+
+是机器人系统的确定性传感器基础设施层。
+
+将传感器集成从定制化工程工作转变为可部署的基础设施。
+
+通过[**评估套件**](/software/evaluation-kit.md)在您的系统中探索Atlas 天枢。
