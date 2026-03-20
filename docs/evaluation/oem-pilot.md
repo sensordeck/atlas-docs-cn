@@ -700,7 +700,7 @@ Atlas 提供更多评估和部署材料：
 集成与部署常见问题
 
 -   👉 [集成问答FAQ](/evaluation/faq.md)
--   👉 [下载中心](/evaluation/download.md)
+-   👉 [下载中心](/evaluation/download)
 
 ---
 

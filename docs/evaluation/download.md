@@ -1,3 +1,8 @@
+---
+title: 下载中心
+sidebar_label: 下载中心
+---
+
 # Atlas 下载中心 | Atlas 技术文档
 
 本页面为计划将 **Atlas 确定性传感器基础设施层 (DSIL)** 评估或集成至机器人平台的工程团队，提供所需的技术资源。
@@ -26,7 +31,7 @@
 | :--- | :--- |
 | **版本** | v1.0 |
 | **最后更新** | [年月日] |
-| **包内容** | • Atlas STEP 3D 模型<br> • Atlas 机械图纸 (2D)<br> • Atlas 安装孔位参考图<br> • Atlas 连接器布局图<br> • Atlas 引脚定义表<br> • 线缆布线参考指南<br> • 热接口规范指南 |
+| **包内容** | Atlas STEP 3D 模型；Atlas 机械图纸 (2D)；Atlas 安装孔位参考图；Atlas 连接器布局图；Atlas 引脚定义表；线缆布线参考指南；热接口规范指南 |
 | **下载** | [Atlas_Hardware_Integration_Pack_v1.zip](链接占位符) |
 | **SHA-256** | `[SHA256_PLACEHOLDER_ATLAS_HARDWARE_INTEGRATION_PACK]` |
 | **上传路径** | `static/downloads/hardware/Atlas_Hardware_Integration_Pack_v1.zip` |
@@ -43,7 +48,7 @@
 | :--- | :--- |
 | **版本** | v1.0 |
 | **最后更新** | [年月日] |
-| **包内容** | • Atlas 系统框图<br> • Atlas 电源架构概述<br> • Atlas I/O 接口规范<br> • Atlas 同步信号规范<br> • PPS 时序规范<br> • 掉电与负载跃落行为说明<br> • 信号电平参考<br> • ESD 防护模型 |
+| **包内容** | Atlas 系统框图；Atlas 电源架构概述；Atlas I/O 接口规范；Atlas 同步信号规范；PPS 时序规范；掉电与负载跃落行为说明；信号电平参考；ESD 防护模型 |
 | **下载** | [Atlas_Electrical_Reference_Pack.zip](链接占位符) |
 | **SHA-256** | `[SHA256_PLACEHOLDER_ATLAS_ELECTRICAL_REFERENCE_PACK]` |
 | **上传路径** | `static/downloads/electrical/Atlas_Electrical_Reference_Pack.zip` |
@@ -62,7 +67,7 @@
 | :--- | :--- |
 | **版本** | v0.1 |
 | **最后更新** | [年月日] |
-| **包内容** | • DSIL SDK 核心库<br> • Atlas 命令行界面 (CLI) 诊断工具<br> • ROS2 桥接示例<br> • 传感器遥测数据解码示例<br> • 示例配置文件 |
+| **包内容** | DSIL SDK 核心库；Atlas 命令行界面 (CLI) 诊断工具；ROS2 桥接示例；传感器遥测数据解码示例；示例配置文件 |
 | **下载** | [atlas_dsil_sdk_v0.1.zip](链接占位符) |
 | **SHA-256** | `[SHA256_PLACEHOLDER_ATLAS_DSIL_SDK_V0_1]` |
 | **上传路径** | `static/downloads/software/atlas_dsil_sdk_v0.1.zip` |
@@ -81,7 +86,7 @@
 | :--- | :--- |
 | **版本** | v1.0 |
 | **最后更新** | [年月日] |
-| **指南包含** | • Jetson / Linux 系统设置<br> • 传感器连接参考<br> • 遥测数据验证<br> • 同步功能验证示例 |
+| **指南包含** | Jetson / Linux 系统设置；传感器连接参考；遥测数据验证；同步功能验证示例 |
 | **下载** | [Atlas_Eval_Kit_Quickstart.pdf](链接占位符) |
 | **SHA-256** | `[SHA256_PLACEHOLDER_ATLAS_EVAL_KIT_QUICKSTART]` |
 | **上传路径** | `static/downloads/evaluation/Atlas_Eval_Kit_Quickstart.pdf` |
@@ -100,7 +105,7 @@
 | :--- | :--- |
 | **版本** | v1.0 |
 | **最后更新** | [年月日] |
-| **涵盖主题** | • 传感器聚合架构<br> • 确定性时序基础设施<br> • 同步模型<br> • 计算平台集成<br> • 跨机器人平台复用 |
+| **涵盖主题** | 传感器聚合架构；确定性时序基础设施；同步模型；计算平台集成；跨机器人平台复用 |
 | **下载** | [Atlas_DSIL_System_Architecture.pdf](链接占位符) |
 | **SHA-256** | `[SHA256_PLACEHOLDER_ATLAS_DSIL_SYSTEM_ARCHITECTURE]` |
 | **上传路径** | `static/downloads/evaluation/Atlas_DSIL_System_Architecture.pdf` |
@@ -119,7 +124,7 @@
 | :--- | :--- |
 | **版本** | v1.0 |
 | **最后更新** | [年月日] |
-| **包内容** | • Atlas OEM 集成指南<br> • 白标硬件适配概述<br> • DSIL SDK 集成模型<br> • 生产基础设施规划指南<br> • 原型机项目概述 |
+| **包内容** | Atlas OEM 集成指南；白标硬件适配概述；DSIL SDK 集成模型；生产基础设施规划指南；原型机项目概述 |
 | **下载** | [Atlas_OEM_Integration_Pack.zip](链接占位符) |
 | **SHA-256** | `[SHA256_PLACEHOLDER_ATLAS_OEM_INTEGRATION_PACK]` |
 | **上传路径** | `static/downloads/oem/Atlas_OEM_Integration_Pack.zip` |
@@ -169,17 +174,20 @@ Atlas 被设计为跨多个机器人项目的通用传感器基础设施。
 对于面向生产计划的项目，团队还应审阅 **OEM 集成包** 以及未来发布的相关 **认证与生产就绪文档**。
 
 ### 下一步
+
 理解 Atlas 的最佳方式是在您自己的系统中进行评估。
 
-👉 [**申请 Atlas 评估套件**](/software/evaluation-kit.md)
+👉 [**申请 Atlas 评估套件**](/software/evaluation-kit)
 
 ### 集成资源
+
 Atlas 提供更多评估和部署材料：
 
 集成与部署常见问题
 
--   👉 [集成问答FAQ](/evaluation/faq.md)
+-   👉 [集成问答FAQ](/evaluation/faq)
 
+---
 
 **Atlas 天枢系列**
 
@@ -187,5 +195,4 @@ Atlas 提供更多评估和部署材料：
 
 将传感器集成从定制化工程工作转变为可部署的基础设施。
 
-通过[**评估套件**](/software/evaluation-kit.md)在您的系统中探索Atlas 天枢。
-
+通过 [**评估套件**](/software/evaluation-kit) 在您的系统中探索 Atlas 天枢。

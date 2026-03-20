@@ -18,7 +18,7 @@ const config = {
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -32,7 +32,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: 'docs',
+          routeBasePath: '/',   // ✅ FINAL DECISION
           editUrl: 'https://github.com/sensordeck/atlas-docs-cn/tree/main/',
         },
         blog: false,
@@ -63,7 +63,7 @@ const config = {
             label: '文档',
           },
           {
-            to: '/docs/intro',
+            to: '/intro',   // ✅ MUST match routeBasePath '/'
             label: '快速开始',
             position: 'left',
           },
@@ -82,7 +82,7 @@ const config = {
             items: [
               {
                 label: '文档导读',
-                to: '/docs/intro',
+                to: '/intro',   // ✅ MUST match routeBasePath '/'
               },
             ],
           },

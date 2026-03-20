@@ -1,6 +1,12 @@
+---
+title: ROS2 集成
+sidebar_label: ROS2 集成
+---
+
 # ROS2 集成
 
 内容定位
+
 本页展示 Atlas 和 DSIL 如何集成到现有的基于 ROS2 的机器人系统中。
 
 在理解了硬件和软件层之后，本节演示了如何在无需修改现有驱动或感知流程的情况下部署 Atlas。
@@ -9,7 +15,7 @@
 
 ## 面向 ROS2 机器人系统的确定性传感器集成
 
-> **ROS2 解决通信问题，不解决时间问题。**
+> **ROS2 解决通信问题，不解决时间问题。**  
 > **Atlas 让时间戳变得可信。**
 
 ---
@@ -18,19 +24,19 @@
 
 > **复制这一行，启动 Atlas**
 
-```bash id="launch-core"
+```bash
 ros2 launch atlas_dsil_bridge telemetry.launch.py
 ```
 
 验证系统：
 
-```bash id="verify-topics"
+```bash
 ros2 topic list
 ```
 
 你应该看到：
 
-```id="topics-output"
+```text
 /imu/data
 /gps/fix
 /atlas/pps
@@ -38,8 +44,8 @@ ros2 topic list
 /atlas/health
 ```
 
-👉 无需修改驱动
-👉 无需修改感知栈
+👉 无需修改驱动  
+👉 无需修改感知栈  
 👉 即插即用进入 ROS2 图
 
 ---
@@ -75,11 +81,11 @@ ROS2 是中间件，不是时间权威。
 
 ## 🏗 系统架构
 
-<img src="/_media/Fig 13.png" alt="Atlas ROS2 的集成管道" width="50%" title="Atlas ROS2 的集成管道">
+![Atlas ROS2 的集成管道](/img/Fig%2013.png)
 
 Sensors → Atlas（时间对齐）→ DSIL → ROS2 Topics → SLAM / Nav2 / Perception
 
-👉 Atlas = 时间边界
+👉 Atlas = 时间边界  
 👉 DSIL = 映射到 ROS2
 
 ---
@@ -94,7 +100,7 @@ Sensors → Atlas（时间对齐）→ DSIL → ROS2 Topics → SLAM / Nav2 / Pe
 
 ### 📌 ROS2 Header（关键结构）
 
-```id="header-struct"
+```text
 std_msgs/Header
 ```
 
@@ -102,7 +108,7 @@ std_msgs/Header
 
 ### 🔬 DSIL 时间校正（核心伪代码）
 
-```cpp id="timestamp-core"
+```cpp
 // DSIL 时间校正逻辑（核心）
 msg.header.stamp = atlas_hardware_time + calculated_offset;
 ```
@@ -127,21 +133,21 @@ DSIL 实时计算：
 * 不依赖传感器内部时钟
 * 不破坏 ROS2 driver
 
-✔ 完全兼容现有系统
-✔ 可验证
+✔ 完全兼容现有系统  
+✔ 可验证  
 ✔ 可解释
 
 ---
 
 ## 🔌 ROS2 话题映射（Plug-and-Play）
 
-| Atlas 数据              | ROS2 话题         | 类型                                 | 应用价值      |
-| --------------------- | --------------- | ---------------------------------- | --------- |
-| IMU                   | `/imu/data`     | `sensor_msgs/Imu`                  | SLAM / 姿态 |
-| GNSS                  | `/gps/fix`      | `sensor_msgs/NavSatFix`            | 定位        |
-| PPS（Pulse Per Second） | `/atlas/pps`    | `std_msgs/Bool`                    | 时间基准      |
-| 同步事件                  | `/atlas/sync`   | `std_msgs/Bool`                    | 对齐触发      |
-| 系统健康                  | `/atlas/health` | `diagnostic_msgs/DiagnosticStatus` | 诊断        |
+| Atlas 数据 | ROS2 话题 | 类型 | 应用价值 |
+| --- | --- | --- | --- |
+| IMU | `/imu/data` | `sensor_msgs/Imu` | SLAM / 姿态 |
+| GNSS | `/gps/fix` | `sensor_msgs/NavSatFix` | 定位 |
+| PPS（Pulse Per Second） | `/atlas/pps` | `std_msgs/Bool` | 时间基准 |
+| 同步事件 | `/atlas/sync` | `std_msgs/Bool` | 对齐触发 |
+| 系统健康 | `/atlas/health` | `diagnostic_msgs/DiagnosticStatus` | 诊断 |
 
 👉 可直接接入：
 
@@ -156,7 +162,7 @@ DSIL 实时计算：
 
 Atlas 引入统一参考坐标系：
 
-```id="atlas-frame"
+```text
 atlas_link
 ```
 
@@ -164,7 +170,7 @@ atlas_link
 
 ### TF 树结构
 
-<img src="/_media/Fig 15.png" alt="Atlas TF 树结构" width="50%" title="Atlas TF 树结构">
+![Atlas TF 树结构](/img/Fig%2015.png)
 
 ---
 
@@ -206,7 +212,7 @@ atlas_link
 
 结果：
 
-👉 DSIL 调度开销可忽略
+👉 DSIL 调度开销可忽略  
 👉 上下文切换几乎为 0
 
 ✅ **98%+ CPU 保留给 SLAM / Nav2 / Perception**
@@ -217,7 +223,7 @@ atlas_link
 
 设备路径：
 
-```id="device-path"
+```text
 /dev/ttyACM0
 ```
 
@@ -238,19 +244,19 @@ atlas_link
 * 延迟补偿算法
 * 时间重映射
 
-✔ 屏蔽 USB 抖动
+✔ 屏蔽 USB 抖动  
 ✔ 保持时间一致性
 
 ---
 
 ## 🧰 常见问题排查（工程必备）
 
-| 现象          | 原因      | 解决                           |
-| ----------- | ------- | ---------------------------- |
-| 无 `/atlas/` | USB 未识别 | `ls /dev/ttyACM*`            |
-| IMU 不动      | 未供电     | 检查 Atlas 电源                  |
-| 时间跳变        | PPS 丢失  | `ros2 topic echo /atlas/pps` |
-| 频率异常        | 节点未运行   | `ros2 node list`             |
+| 现象 | 原因 | 解决 |
+| --- | --- | --- |
+| 无 `/atlas/` | USB 未识别 | `ls /dev/ttyACM*` |
+| IMU 不动 | 未供电 | 检查 Atlas 电源 |
+| 时间跳变 | PPS 丢失 | `ros2 topic echo /atlas/pps` |
+| 频率异常 | 节点未运行 | `ros2 node list` |
 
 ---
 
@@ -292,19 +298,19 @@ atlas_link
 * 30 FPS 摄像头
 * 200 Hz IMU
 
-👉 时间严格对齐
+👉 时间严格对齐  
 👉 消除运动模糊误差
 
 ---
 
 ## 📦 ROS2 版本兼容性
 
-| 版本      | 支持 |
-| ------- | -- |
-| Humble  | ✅  |
-| Iron    | ✅  |
-| Rolling | ✅  |
-| Foxy    | ⚠️ |
+| 版本 | 支持 |
+| --- | --- |
+| Humble | ✅ |
+| Iron | ✅ |
+| Rolling | ✅ |
+| Foxy | ⚠️ |
 
 ---
 
@@ -327,19 +333,19 @@ Atlas 不负责：
 
 ### 对比传统方案
 
-| 维度   | 传统方案 | Atlas   |
-| ---- | ---- | ------- |
+| 维度 | 传统方案 | Atlas |
+| --- | --- | --- |
 | 同步方式 | 软件补偿 | 硬件 + 软件 |
-| 部署   | 手工调试 | 即插即用    |
-| 可观测性 | 黑盒   | 完全可见    |
-| 调试时间 | 小时级  | 秒级      |
+| 部署 | 手工调试 | 即插即用 |
+| 可观测性 | 黑盒 | 完全可见 |
+| 调试时间 | 小时级 | 秒级 |
 
 ---
 
 ### 🚀 核心优势
 
-🔷 硬件级同步 → 精度提升数量级
-🔷 即插即用 → 部署从天 → 分钟
+🔷 硬件级同步 → 精度提升数量级  
+🔷 即插即用 → 部署从天 → 分钟  
 🔷 全可观测 → Debug 从小时 → 秒
 
 ---
@@ -359,23 +365,22 @@ Atlas 不负责：
 
 > **Atlas = ROS2 之下的时间基础设施层**
 
-👉 不改变你的系统
+👉 不改变你的系统  
 👉 让你的系统“时间正确”
 
 ---
 
 ## 下一步
+
 至此，您已了解 Atlas 如何：
 
-确立硬件时序边界
-
-将时序转换为可用数据
-
-集成到 ROS2 系统
+* 确立硬件时序边界
+* 将时序转换为可用数据
+* 集成到 ROS2 系统
 
 下一步是在您自己的环境中评估 Atlas。
 
-👉 申请 [Atlas 评估套件](/software/evaluation-kit.md) 
+👉 申请 [Atlas 评估套件](/software/evaluation-kit)
 
 ---
 
@@ -385,4 +390,4 @@ Atlas 不负责：
 
 将传感器集成从定制化工程工作转变为可部署的基础设施。
 
-通过[**评估套件**](/evaluation/evaluation-kit.md)在您的系统中探索Atlas 天枢。
+通过 [**评估套件**](/software/evaluation-kit) 在您的系统中探索 Atlas 天枢。

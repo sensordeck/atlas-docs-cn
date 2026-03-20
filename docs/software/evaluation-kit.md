@@ -129,7 +129,7 @@ vectornav_driver
 
 # 评估系统架构
 
-<img src="/_media/Fig 19.png" alt="Atlas 评估系统架构" width="60%" title="Atlas 评估系统架构">
+![Atlas 评估系统架构](/img/Fig 19.png)
 
 本次评估特意使用了具有独立时钟的传感器。
 
@@ -411,15 +411,15 @@ Atlas 消除了重新设计以下系统的需求：
 Atlas 用可重用的基础设施层取代了重复性的工程工作。
 
 ## 下一步
-如果 Atlas 满足您的系统要求，下一步就是[**开始 OEM 集成试点**](./evaluation/oem-pilot.md)。
+如果 Atlas 满足您的系统要求，下一步就是[**开始 OEM 集成试点**](/evaluation/oem-pilot)。
 
 ### 集成资源
 Atlas 提供更多评估和部署材料：
 
 集成与部署常见问题
 
--   👉 [集成问答FAQ](/evaluation/faq.md)
--   👉 [下载中心](/evaluation/download.md)
+-   👉 [集成问答FAQ](/evaluation/faq)
+-   👉 [下载中心](/evaluation/download)
 
 ---
 
@@ -431,4 +431,4 @@ Atlas 天枢系列
 
 如果 Atlas 满足您的系统需求，下一步就是进行 OEM 集成。
 
-👉 开启 [**Atlas OEM / 白标集成计划**](./evaluation/oem-pilot.md) *开始构建您的机器人传感器基础设施层 联系我们的技术团队获取支持。微信ID: jchen66*。
+👉 开启 [**Atlas OEM / 白标集成计划**](/evaluation/oem-pilot) *开始构建您的机器人传感器基础设施层 联系我们的技术团队获取支持。微信ID: jchen66*。
