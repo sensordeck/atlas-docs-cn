@@ -169,8 +169,8 @@ Atlas 位于：
 
 ---
 
--   👉 [集成问答FAQ](./evaluation/faq.md)
--   👉 [下载中心](./evaluation/download.md)
+- 👉 [集成问答 FAQ](/evaluation/faq)
+- 👉 [下载中心](/evaluation/download)
 
 ### 3. DSIL SDK
 
@@ -234,6 +234,4 @@ Atlas 是机器人系统的：
 
 将传感器集成从“工程问题”转变为“系统能力”。
 
-👉 通过 [评估套件](./software/evaluation-kit.md) 在您的系统中探索 Atlas 天枢
-
-通过[**评估套件**](./software/evaluation-kit.md)在您的系统中探索Atlas 天枢。
+👉 通过 [评估套件](/software/evaluation-kit) 在您的系统中探索 Atlas 天枢
