@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-software/ros2-integration" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">ROS2 集成 | Atlas 天枢开发文档</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sensordeck.github.io/atlas-docs-cn/img/SensorDeck.png"><meta data-rh="true" name="twitter:image" content="https://sensordeck.github.io/atlas-docs-cn/img/SensorDeck.png"><meta data-rh="true" property="og:url" content="https://sensordeck.github.io/atlas-docs-cn/software/ros2-integration"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="ROS2 集成 | Atlas 天枢开发文档"><meta data-rh="true" name="description" content="内容定位"><meta data-rh="true" property="og:description" content="内容定位"><link data-rh="true" rel="icon" href="/atlas-docs-cn/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://sensordeck.github.io/atlas-docs-cn/software/ros2-integration"><link data-rh="true" rel="alternate" href="https://sensordeck.github.io/atlas-docs-cn/software/ros2-integration" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://sensordeck.github.io/atlas-docs-cn/software/ros2-integration" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ROS2 集成","item":"https://sensordeck.github.io/atlas-docs-cn/software/ros2-integration"}]}</script><link rel="stylesheet" href="/atlas-docs-cn/assets/css/styles.4b065cb5.css">
+<script src="/atlas-docs-cn/assets/js/runtime~main.031b5eaf.js" defer="defer"></script>
+<script src="/atlas-docs-cn/assets/js/main.3ef2b420.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/atlas-docs-cn/img/SensorDeck.png"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/atlas-docs-cn/"><div class="navbar__logo"><img src="/atlas-docs-cn/img/SensorDeck.png" alt="SensorDeck Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/atlas-docs-cn/img/SensorDeck.png" alt="SensorDeck Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Atlas 天枢文档</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/sensordeck/atlas-docs-cn" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/intro"><span title="Atlas 开发文档" class="linkLabel_WmDU">Atlas 开发文档</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/software/sensor-synchronization"><span title="传感器同步" class="linkLabel_WmDU">传感器同步</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/hardware/fusion-platform"><span title="硬件架构" class="linkLabel_WmDU">硬件架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/software/DSIL-SDK"><span title="DSIL SDK" class="linkLabel_WmDU">DSIL SDK</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/atlas-docs-cn/software/ros2-integration"><span title="ROS2 集成" class="linkLabel_WmDU">ROS2 集成</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/software/evaluation-kit"><span title="Atlas 评估套件" class="linkLabel_WmDU">Atlas 评估套件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/evaluation/oem-pilot"><span title="Atlas 白标 OEM 集成试点计划" class="linkLabel_WmDU">Atlas 白标 OEM 集成试点计划</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/evaluation/faq"><span title="集成问答 FAQ" class="linkLabel_WmDU">集成问答 FAQ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/evaluation/download"><span title="下载中心" class="linkLabel_WmDU">下载中心</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/atlas-docs-cn/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">ROS2 集成</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>ROS2 集成</h1></header>
+<p>内容定位</p>
+<p>本页展示 Atlas 和 DSIL 如何集成到现有的基于 ROS2 的机器人系统中。</p>
+<p>在理解了硬件和软件层之后，本节演示了如何在无需修改现有驱动或感知流程的情况下部署 Atlas。</p>
+<p>这是 Atlas 实现即插即用的关键环节。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="面向-ros2-机器人系统的确定性传感器集成">面向 ROS2 机器人系统的确定性传感器集成<a href="#面向-ros2-机器人系统的确定性传感器集成" class="hash-link" aria-label="面向 ROS2 机器人系统的确定性传感器集成的直接链接" title="面向 ROS2 机器人系统的确定性传感器集成的直接链接" translate="no">​</a></h2>
+<blockquote>
+<p><strong>ROS2 解决通信问题，不解决时间问题。</strong><br>
+<strong>Atlas 让时间戳变得可信。</strong></p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-30-秒上手">🚀 30 秒上手<a href="#-30-秒上手" class="hash-link" aria-label="🚀 30 秒上手的直接链接" title="🚀 30 秒上手的直接链接" translate="no">​</a></h2>
+<blockquote>
+<p><strong>复制这一行，启动 Atlas</strong></p>
+</blockquote>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ros2 launch atlas_dsil_bridge telemetry.launch.py</span><br></span></code></pre></div></div>
+<p>验证系统：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ros2 topic list</span><br></span></code></pre></div></div>
+<p>你应该看到：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/imu/data</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/gps/fix</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/atlas/pps</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/atlas/sync</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/atlas/health</span><br></span></code></pre></div></div>
+<p>👉 无需修改驱动<br>
+<!-- -->👉 无需修改感知栈<br>
+<!-- -->👉 即插即用进入 ROS2 图</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-为什么-ros2-不够">🧠 为什么 ROS2 不够<a href="#-为什么-ros2-不够" class="hash-link" aria-label="🧠 为什么 ROS2 不够的直接链接" title="🧠 为什么 ROS2 不够的直接链接" translate="no">​</a></h2>
+<p>ROS2 是中间件，不是时间权威。</p>
+<p>它默认：</p>
+<p>👉 <strong>所有传感器时间戳已经对齐</strong></p>
+<p>现实中：</p>
+<ul>
+<li class="">USB 摄像头 → 抖动（jitter）</li>
+<li class="">LiDAR → 内部时钟</li>
+<li class="">IMU / GNSS → 独立漂移</li>
+</ul>
+<p>结果：</p>
+<ul>
+<li class="">❌ 时间错位</li>
+<li class="">❌ SLAM 漂移</li>
+<li class="">❌ 融合不稳定</li>
+<li class="">❌ 调试困难</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-atlas-做了什么">🧩 Atlas 做了什么<a href="#-atlas-做了什么" class="hash-link" aria-label="🧩 Atlas 做了什么的直接链接" title="🧩 Atlas 做了什么的直接链接" translate="no">​</a></h2>
+<p>👉 <strong>在 ROS2 之下建立“硬件时间基准 + 软件对齐层”</strong></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-系统架构">🏗 系统架构<a href="#-系统架构" class="hash-link" aria-label="🏗 系统架构的直接链接" title="🏗 系统架构的直接链接" translate="no">​</a></h2>
+<p><img decoding="async" loading="lazy" alt="Atlas ROS2 的集成管道" src="/atlas-docs-cn/assets/images/Fig 13-acb3f58d226fd2203aa493ce4877e403.png" width="928" height="768" class="img_ev3q"></p>
+<p>Sensors → Atlas（时间对齐）→ DSIL → ROS2 Topics → SLAM / Nav2 / Perception</p>
+<p>👉 Atlas = 时间边界<br>
+<!-- -->👉 DSIL = 映射到 ROS2</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="️-核心机制时间戳是如何被修正的">⚙️ 核心机制：时间戳是如何被修正的？<a href="#️-核心机制时间戳是如何被修正的" class="hash-link" aria-label="⚙️ 核心机制：时间戳是如何被修正的？的直接链接" title="⚙️ 核心机制：时间戳是如何被修正的？的直接链接" translate="no">​</a></h2>
+<p>所有关键逻辑只做一件事：</p>
+<p>👉 <strong>修改 ROS2 Header.stamp</strong></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-ros2-header关键结构">📌 ROS2 Header（关键结构）<a href="#-ros2-header关键结构" class="hash-link" aria-label="📌 ROS2 Header（关键结构）的直接链接" title="📌 ROS2 Header（关键结构）的直接链接" translate="no">​</a></h3>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">std_msgs/Header</span><br></span></code></pre></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-dsil-时间校正核心伪代码">🔬 DSIL 时间校正（核心伪代码）<a href="#-dsil-时间校正核心伪代码" class="hash-link" aria-label="🔬 DSIL 时间校正（核心伪代码）的直接链接" title="🔬 DSIL 时间校正（核心伪代码）的直接链接" translate="no">​</a></h3>
+<div class="language-cpp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-cpp codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">// DSIL 时间校正逻辑（核心）</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">msg</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">header</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">stamp </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> atlas_hardware_time </span><span class="token operator" style="color:#393A34">+</span><span class="token plain"> calculated_offset</span><span class="token punctuation" style="color:#393A34">;</span><br></span></code></pre></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-这个-offset-从哪里来">🧠 这个 offset 从哪里来？<a href="#-这个-offset-从哪里来" class="hash-link" aria-label="🧠 这个 offset 从哪里来？的直接链接" title="🧠 这个 offset 从哪里来？的直接链接" translate="no">​</a></h3>
+<p>DSIL 实时计算：</p>
+<ul>
+<li class="">USB 传输延迟</li>
+<li class="">系统调度延迟</li>
+<li class="">数据到达时间偏差</li>
+</ul>
+<p>👉 得到一个 <strong>动态补偿值（calculated_offset）</strong></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-设计原则why-engineers-trust-this">🎯 设计原则（Why engineers trust this）<a href="#-设计原则why-engineers-trust-this" class="hash-link" aria-label="🎯 设计原则（Why engineers trust this）的直接链接" title="🎯 设计原则（Why engineers trust this）的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">不修改传感器固件</li>
+<li class="">不依赖传感器内部时钟</li>
+<li class="">不破坏 ROS2 driver</li>
+</ul>
+<p>✔ 完全兼容现有系统<br>
+<!-- -->✔ 可验证<br>
+<!-- -->✔ 可解释</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-ros2-话题映射plug-and-play">🔌 ROS2 话题映射（Plug-and-Play）<a href="#-ros2-话题映射plug-and-play" class="hash-link" aria-label="🔌 ROS2 话题映射（Plug-and-Play）的直接链接" title="🔌 ROS2 话题映射（Plug-and-Play）的直接链接" translate="no">​</a></h2>
+<table><thead><tr><th>Atlas 数据</th><th>ROS2 话题</th><th>类型</th><th>应用价值</th></tr></thead><tbody><tr><td>IMU</td><td><code>/imu/data</code></td><td><code>sensor_msgs/Imu</code></td><td>SLAM / 姿态</td></tr><tr><td>GNSS</td><td><code>/gps/fix</code></td><td><code>sensor_msgs/NavSatFix</code></td><td>定位</td></tr><tr><td>PPS（Pulse Per Second）</td><td><code>/atlas/pps</code></td><td><code>std_msgs/Bool</code></td><td>时间基准</td></tr><tr><td>同步事件</td><td><code>/atlas/sync</code></td><td><code>std_msgs/Bool</code></td><td>对齐触发</td></tr><tr><td>系统健康</td><td><code>/atlas/health</code></td><td><code>diagnostic_msgs/DiagnosticStatus</code></td><td>诊断</td></tr></tbody></table>
+<p>👉 可直接接入：</p>
+<ul>
+<li class="">Nav2</li>
+<li class="">SLAM Toolbox</li>
+<li class="">RTAB-Map</li>
+<li class="">Isaac ROS</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-tf2-与物理对齐slam-关键">📍 TF2 与物理对齐（SLAM 关键）<a href="#-tf2-与物理对齐slam-关键" class="hash-link" aria-label="📍 TF2 与物理对齐（SLAM 关键）的直接链接" title="📍 TF2 与物理对齐（SLAM 关键）的直接链接" translate="no">​</a></h2>
+<p>Atlas 引入统一参考坐标系：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">atlas_link</span><br></span></code></pre></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tf-树结构">TF 树结构<a href="#tf-树结构" class="hash-link" aria-label="TF 树结构的直接链接" title="TF 树结构的直接链接" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" alt="Atlas TF 树结构" src="/atlas-docs-cn/assets/images/Fig 15-5f0422dd3e9851c268654f9232bfde19.png" width="916" height="768" class="img_ev3q"></p>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="为什么重要">为什么重要？<a href="#为什么重要" class="hash-link" aria-label="为什么重要？的直接链接" title="为什么重要？的直接链接" translate="no">​</a></h3>
+<p>👉 时间对齐 + 空间对齐 = 可用数据</p>
+<p>没有 atlas_link：</p>
+<ul>
+<li class="">传感器坐标混乱</li>
+<li class="">SLAM 不稳定</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="实践建议">实践建议<a href="#实践建议" class="hash-link" aria-label="实践建议的直接链接" title="实践建议的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">URDF 中定义 <code>atlas_link</code></li>
+<li class="">使用 <code>static_transform_publisher</code></li>
+<li class="">与实际安装位置一致</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-性能表现real-numbers">⚡ 性能表现（Real Numbers）<a href="#-性能表现real-numbers" class="hash-link" aria-label="⚡ 性能表现（Real Numbers）的直接链接" title="⚡ 性能表现（Real Numbers）的直接链接" translate="no">​</a></h2>
+<p>在 Jetson Orin Nano（实测典型）：</p>
+<ul>
+<li class="">延迟：<strong>&lt; 1 ms（端到端）</strong></li>
+<li class="">CPU：<strong>&lt; 2%</strong></li>
+<li class="">内存：<strong>&lt; 20 MB</strong></li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-实际负载场景">📊 实际负载场景<a href="#-实际负载场景" class="hash-link" aria-label="📊 实际负载场景的直接链接" title="📊 实际负载场景的直接链接" translate="no">​</a></h3>
+<p>同时处理：</p>
+<ul>
+<li class="">400 Hz IMU</li>
+<li class="">10 Hz GNSS</li>
+</ul>
+<p>结果：</p>
+<p>👉 DSIL 调度开销可忽略<br>
+<!-- -->👉 上下文切换几乎为 0</p>
+<p>✅ <strong>98%+ CPU 保留给 SLAM / Nav2 / Perception</strong></p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-为什么使用-usb-cdc">🔧 为什么使用 USB CDC？<a href="#-为什么使用-usb-cdc" class="hash-link" aria-label="🔧 为什么使用 USB CDC？的直接链接" title="🔧 为什么使用 USB CDC？的直接链接" translate="no">​</a></h2>
+<p>设备路径：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/dev/ttyACM0</span><br></span></code></pre></div></div>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="设计选择理由">设计选择理由<a href="#设计选择理由" class="hash-link" aria-label="设计选择理由的直接链接" title="设计选择理由的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">✔ 跨平台（x86 / ARM）</li>
+<li class="">✔ 即插即用</li>
+<li class="">✔ 无需驱动</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-那-usb-不确定性怎么办">❗ 那 USB 不确定性怎么办？<a href="#-那-usb-不确定性怎么办" class="hash-link" aria-label="❗ 那 USB 不确定性怎么办？的直接链接" title="❗ 那 USB 不确定性怎么办？的直接链接" translate="no">​</a></h3>
+<p>👉 DSIL 已解决：</p>
+<ul>
+<li class="">延迟补偿算法</li>
+<li class="">时间重映射</li>
+</ul>
+<p>✔ 屏蔽 USB 抖动<br>
+<!-- -->✔ 保持时间一致性</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-常见问题排查工程必备">🧰 常见问题排查（工程必备）<a href="#-常见问题排查工程必备" class="hash-link" aria-label="🧰 常见问题排查（工程必备）的直接链接" title="🧰 常见问题排查（工程必备）的直接链接" translate="no">​</a></h2>
+<table><thead><tr><th>现象</th><th>原因</th><th>解决</th></tr></thead><tbody><tr><td>无 <code>/atlas/</code></td><td>USB 未识别</td><td><code>ls /dev/ttyACM*</code></td></tr><tr><td>IMU 不动</td><td>未供电</td><td>检查 Atlas 电源</td></tr><tr><td>时间跳变</td><td>PPS 丢失</td><td><code>ros2 topic echo /atlas/pps</code></td></tr><tr><td>频率异常</td><td>节点未运行</td><td><code>ros2 node list</code></td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-驱动兼容性no-rewrite">🔄 驱动兼容性（No Rewrite）<a href="#-驱动兼容性no-rewrite" class="hash-link" aria-label="🔄 驱动兼容性（No Rewrite）的直接链接" title="🔄 驱动兼容性（No Rewrite）的直接链接" translate="no">​</a></h2>
+<p>完全兼容：</p>
+<ul>
+<li class=""><code>usb_cam</code></li>
+<li class=""><code>ouster_ros</code></li>
+<li class=""><code>velodyne_driver</code></li>
+<li class=""><code>microstrain</code></li>
+</ul>
+<p>👉 Atlas 不替换驱动，只增强时间</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-多传感器对齐效果">🎯 多传感器对齐效果<a href="#-多传感器对齐效果" class="hash-link" aria-label="🎯 多传感器对齐效果的直接链接" title="🎯 多传感器对齐效果的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-无-atlas">❌ 无 Atlas<a href="#-无-atlas" class="hash-link" aria-label="❌ 无 Atlas的直接链接" title="❌ 无 Atlas的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">时间漂移</li>
+<li class="">数据错位</li>
+<li class="">SLAM 精度下降</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-使用-atlas">✅ 使用 Atlas<a href="#-使用-atlas" class="hash-link" aria-label="✅ 使用 Atlas的直接链接" title="✅ 使用 Atlas的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">PPS 对齐</li>
+<li class="">同步触发</li>
+<li class="">单一时间轴</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-真实场景">📌 真实场景<a href="#-真实场景" class="hash-link" aria-label="📌 真实场景的直接链接" title="📌 真实场景的直接链接" translate="no">​</a></h3>
+<p>自动驾驶小车：</p>
+<ul>
+<li class="">30 FPS 摄像头</li>
+<li class="">200 Hz IMU</li>
+</ul>
+<p>👉 时间严格对齐<br>
+<!-- -->👉 消除运动模糊误差</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-ros2-版本兼容性">📦 ROS2 版本兼容性<a href="#-ros2-版本兼容性" class="hash-link" aria-label="📦 ROS2 版本兼容性的直接链接" title="📦 ROS2 版本兼容性的直接链接" translate="no">​</a></h2>
+<table><thead><tr><th>版本</th><th>支持</th></tr></thead><tbody><tr><td>Humble</td><td>✅</td></tr><tr><td>Iron</td><td>✅</td></tr><tr><td>Rolling</td><td>✅</td></tr><tr><td>Foxy</td><td>⚠️</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-系统边界very-important">🧱 系统边界（Very Important）<a href="#-系统边界very-important" class="hash-link" aria-label="🧱 系统边界（Very Important）的直接链接" title="🧱 系统边界（Very Important）的直接链接" translate="no">​</a></h2>
+<p>Atlas 负责：</p>
+<ul>
+<li class="">感知传感器时间</li>
+<li class="">同步</li>
+<li class="">遥测</li>
+</ul>
+<p>Atlas 不负责：</p>
+<ul>
+<li class="">电机控制</li>
+<li class="">实时控制回路</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-为什么工程师选择-atlas">💡 为什么工程师选择 Atlas<a href="#-为什么工程师选择-atlas" class="hash-link" aria-label="💡 为什么工程师选择 Atlas的直接链接" title="💡 为什么工程师选择 Atlas的直接链接" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="对比传统方案">对比传统方案<a href="#对比传统方案" class="hash-link" aria-label="对比传统方案的直接链接" title="对比传统方案的直接链接" translate="no">​</a></h3>
+<table><thead><tr><th>维度</th><th>传统方案</th><th>Atlas</th></tr></thead><tbody><tr><td>同步方式</td><td>软件补偿</td><td>硬件 + 软件</td></tr><tr><td>部署</td><td>手工调试</td><td>即插即用</td></tr><tr><td>可观测性</td><td>黑盒</td><td>完全可见</td></tr><tr><td>调试时间</td><td>小时级</td><td>秒级</td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="-核心优势">🚀 核心优势<a href="#-核心优势" class="hash-link" aria-label="🚀 核心优势的直接链接" title="🚀 核心优势的直接链接" translate="no">​</a></h3>
+<p>🔷 硬件级同步 → 精度提升数量级<br>
+<!-- -->🔷 即插即用 → 部署从天 → 分钟<br>
+<!-- -->🔷 全可观测 → Debug 从小时 → 秒</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="-最低集成要求">📋 最低集成要求<a href="#-最低集成要求" class="hash-link" aria-label="📋 最低集成要求的直接链接" title="📋 最低集成要求的直接链接" translate="no">​</a></h2>
+<ul>
+<li class="">Linux</li>
+<li class="">ROS2</li>
+<li class="">USB</li>
+<li class="">DSIL SDK</li>
+</ul>
+<p>👉 无需内核驱动</p>
+<hr>
+<h1>✅ 总结</h1>
+<blockquote>
+<p><strong>Atlas = ROS2 之下的时间基础设施层</strong></p>
+</blockquote>
+<p>👉 不改变你的系统<br>
+<!-- -->👉 让你的系统“时间正确”</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="下一步">下一步<a href="#下一步" class="hash-link" aria-label="下一步的直接链接" title="下一步的直接链接" translate="no">​</a></h2>
+<p>至此，您已了解 Atlas 如何：</p>
+<ul>
+<li class="">确立硬件时序边界</li>
+<li class="">将时序转换为可用数据</li>
+<li class="">集成到 ROS2 系统</li>
+</ul>
+<p>下一步是在您自己的环境中评估 Atlas。</p>
+<p>👉 申请 <a class="" href="/atlas-docs-cn/software/evaluation-kit">Atlas 评估套件</a></p>
+<hr>
+<p><strong>Atlas 天枢系列</strong></p>
+<p>是机器人系统的确定性传感器基础设施层。</p>
+<p>将传感器集成从定制化工程工作转变为可部署的基础设施。</p>
+<p>通过 <a class="" href="/atlas-docs-cn/software/evaluation-kit"><strong>评估套件</strong></a> 在您的系统中探索 Atlas 天枢。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/sensordeck/atlas-docs-cn/tree/main/docs/software/ros2-integration.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/atlas-docs-cn/software/DSIL-SDK"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">DSIL SDK</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/atlas-docs-cn/software/evaluation-kit"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Atlas 评估套件</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#面向-ros2-机器人系统的确定性传感器集成" class="table-of-contents__link toc-highlight">面向 ROS2 机器人系统的确定性传感器集成</a></li><li><a href="#-30-秒上手" class="table-of-contents__link toc-highlight">🚀 30 秒上手</a></li><li><a href="#-为什么-ros2-不够" class="table-of-contents__link toc-highlight">🧠 为什么 ROS2 不够</a></li><li><a href="#-atlas-做了什么" class="table-of-contents__link toc-highlight">🧩 Atlas 做了什么</a></li><li><a href="#-系统架构" class="table-of-contents__link toc-highlight">🏗 系统架构</a></li><li><a href="#️-核心机制时间戳是如何被修正的" class="table-of-contents__link toc-highlight">⚙️ 核心机制：时间戳是如何被修正的？</a><ul><li><a href="#-ros2-header关键结构" class="table-of-contents__link toc-highlight">📌 ROS2 Header（关键结构）</a></li><li><a href="#-dsil-时间校正核心伪代码" class="table-of-contents__link toc-highlight">🔬 DSIL 时间校正（核心伪代码）</a></li><li><a href="#-这个-offset-从哪里来" class="table-of-contents__link toc-highlight">🧠 这个 offset 从哪里来？</a></li><li><a href="#-设计原则why-engineers-trust-this" class="table-of-contents__link toc-highlight">🎯 设计原则（Why engineers trust this）</a></li></ul></li><li><a href="#-ros2-话题映射plug-and-play" class="table-of-contents__link toc-highlight">🔌 ROS2 话题映射（Plug-and-Play）</a></li><li><a href="#-tf2-与物理对齐slam-关键" class="table-of-contents__link toc-highlight">📍 TF2 与物理对齐（SLAM 关键）</a><ul><li><a href="#tf-树结构" class="table-of-contents__link toc-highlight">TF 树结构</a></li><li><a href="#为什么重要" class="table-of-contents__link toc-highlight">为什么重要？</a></li><li><a href="#实践建议" class="table-of-contents__link toc-highlight">实践建议</a></li></ul></li><li><a href="#-性能表现real-numbers" class="table-of-contents__link toc-highlight">⚡ 性能表现（Real Numbers）</a><ul><li><a href="#-实际负载场景" class="table-of-contents__link toc-highlight">📊 实际负载场景</a></li></ul></li><li><a href="#-为什么使用-usb-cdc" class="table-of-contents__link toc-highlight">🔧 为什么使用 USB CDC？</a><ul><li><a href="#设计选择理由" class="table-of-contents__link toc-highlight">设计选择理由</a></li><li><a href="#-那-usb-不确定性怎么办" class="table-of-contents__link toc-highlight">❗ 那 USB 不确定性怎么办？</a></li></ul></li><li><a href="#-常见问题排查工程必备" class="table-of-contents__link toc-highlight">🧰 常见问题排查（工程必备）</a></li><li><a href="#-驱动兼容性no-rewrite" class="table-of-contents__link toc-highlight">🔄 驱动兼容性（No Rewrite）</a></li><li><a href="#-多传感器对齐效果" class="table-of-contents__link toc-highlight">🎯 多传感器对齐效果</a><ul><li><a href="#-无-atlas" class="table-of-contents__link toc-highlight">❌ 无 Atlas</a></li><li><a href="#-使用-atlas" class="table-of-contents__link toc-highlight">✅ 使用 Atlas</a></li><li><a href="#-真实场景" class="table-of-contents__link toc-highlight">📌 真实场景</a></li></ul></li><li><a href="#-ros2-版本兼容性" class="table-of-contents__link toc-highlight">📦 ROS2 版本兼容性</a></li><li><a href="#-系统边界very-important" class="table-of-contents__link toc-highlight">🧱 系统边界（Very Important）</a></li><li><a href="#-为什么工程师选择-atlas" class="table-of-contents__link toc-highlight">💡 为什么工程师选择 Atlas</a><ul><li><a href="#对比传统方案" class="table-of-contents__link toc-highlight">对比传统方案</a></li><li><a href="#-核心优势" class="table-of-contents__link toc-highlight">🚀 核心优势</a></li></ul></li><li><a href="#-最低集成要求" class="table-of-contents__link toc-highlight">📋 最低集成要求</a></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">文档</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/intro">Atlas 天枢开发文档</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/sensor-synchronization">传感器同步</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/hardware/fusion-platform">硬件架构</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/DSIL-SDK">DSIL SDK</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/ros2-integration">ROS2 集成</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/evaluation-kit">Atlas 评估套件</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/evaluation/oem-pilot">Atlas 白标OEM集成试点计划</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/evaluation/download">下载中心</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/sensordeck/atlas-docs-cn" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 SensorDeck Inc.</div></div></div></footer></div>
+</body>
+</html>

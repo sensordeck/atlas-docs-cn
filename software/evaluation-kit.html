@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-software/evaluation-kit" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Atlas 评估套件 | Atlas 文档 | Atlas 天枢开发文档</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sensordeck.github.io/atlas-docs-cn/img/SensorDeck.png"><meta data-rh="true" name="twitter:image" content="https://sensordeck.github.io/atlas-docs-cn/img/SensorDeck.png"><meta data-rh="true" property="og:url" content="https://sensordeck.github.io/atlas-docs-cn/software/evaluation-kit"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Atlas 评估套件 | Atlas 文档 | Atlas 天枢开发文档"><meta data-rh="true" name="description" content="本章定位"><meta data-rh="true" property="og:description" content="本章定位"><link data-rh="true" rel="icon" href="/atlas-docs-cn/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://sensordeck.github.io/atlas-docs-cn/software/evaluation-kit"><link data-rh="true" rel="alternate" href="https://sensordeck.github.io/atlas-docs-cn/software/evaluation-kit" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://sensordeck.github.io/atlas-docs-cn/software/evaluation-kit" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Atlas 评估套件","item":"https://sensordeck.github.io/atlas-docs-cn/software/evaluation-kit"}]}</script><link rel="stylesheet" href="/atlas-docs-cn/assets/css/styles.4b065cb5.css">
+<script src="/atlas-docs-cn/assets/js/runtime~main.031b5eaf.js" defer="defer"></script>
+<script src="/atlas-docs-cn/assets/js/main.3ef2b420.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/atlas-docs-cn/img/SensorDeck.png"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/atlas-docs-cn/"><div class="navbar__logo"><img src="/atlas-docs-cn/img/SensorDeck.png" alt="SensorDeck Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/atlas-docs-cn/img/SensorDeck.png" alt="SensorDeck Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Atlas 天枢文档</b></a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/sensordeck/atlas-docs-cn" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="切换浅色/暗黑模式（当前为system mode）"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/intro"><span title="Atlas 开发文档" class="linkLabel_WmDU">Atlas 开发文档</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/software/sensor-synchronization"><span title="传感器同步" class="linkLabel_WmDU">传感器同步</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/hardware/fusion-platform"><span title="硬件架构" class="linkLabel_WmDU">硬件架构</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/software/DSIL-SDK"><span title="DSIL SDK" class="linkLabel_WmDU">DSIL SDK</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/software/ros2-integration"><span title="ROS2 集成" class="linkLabel_WmDU">ROS2 集成</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/atlas-docs-cn/software/evaluation-kit"><span title="Atlas 评估套件" class="linkLabel_WmDU">Atlas 评估套件</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/evaluation/oem-pilot"><span title="Atlas 白标 OEM 集成试点计划" class="linkLabel_WmDU">Atlas 白标 OEM 集成试点计划</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/evaluation/faq"><span title="集成问答 FAQ" class="linkLabel_WmDU">集成问答 FAQ</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/atlas-docs-cn/evaluation/download"><span title="下载中心" class="linkLabel_WmDU">下载中心</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/atlas-docs-cn/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Atlas 评估套件</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>Atlas 评估套件 | Atlas 文档</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="本章定位">本章定位<a href="#本章定位" class="hash-link" aria-label="本章定位的直接链接" title="本章定位的直接链接" translate="no">​</a></h2>
+<p>本文档是 Atlas 文档流程的最终步骤。</p>
+<p>在理解了以下内容之后：</p>
+<ul>
+<li class="">同步问题</li>
+<li class="">Atlas 硬件架构</li>
+<li class="">DSIL 软件层</li>
+<li class="">ROS2 集成模型</li>
+</ul>
+<p>您现在已准备好在自己的机器人系统中评估 Atlas。</p>
+<p>Atlas 评估套件的目标不是探索概念，而是在真实环境中验证确定性传感器集成。</p>
+<p>这是 Atlas 从架构走向可测量系统行为的关键一步。</p>
+<h1>Atlas 评估套件设置</h1>
+<p>Atlas 评估套件允许机器人团队使用真实的传感器组合来验证确定性的多传感器同步。</p>
+<p>该评估旨在回答一个问题：</p>
+<p><strong>Atlas 能否减少跨传感器的时间戳漂移并简化传感器集成？</strong></p>
+<p>一旦系统连接好，完整的评估通常在 30 分钟内即可完成。</p>
+<h1>申请评估套件</h1>
+<p>有兴趣评估 Atlas 的机器人团队可以申请评估套件。</p>
+<p>申请套件时，请提供：
+•   公司/组织
+•   联系人姓名和职位
+•   机器人平台描述
+•   当前传感器组合（摄像头、激光雷达、IMU 等）
+•   预计评估时间
+•   收货地址</p>
+<h1>评估套件可用性</h1>
+<p>Atlas 评估套件免费提供给符合条件的机器人开发团队，用于技术评估目的。</p>
+<p>该评估计划的目标是让工程团队在投入潜在的 OEM 集成试点之前，能够在自己的开发环境中验证 Atlas 的同步性能。</p>
+<p>评估套件数量有限，分发给正在积极开发多传感器感知平台的机器人团队。</p>
+<h1>评估计划条款</h1>
+<table><thead><tr><th style="text-align:left">项目</th><th style="text-align:left">描述</th></tr></thead><tbody><tr><td style="text-align:left">费用</td><td style="text-align:left">免费评估套件</td></tr><tr><td style="text-align:left">评估周期</td><td style="text-align:left">通常为 2–3 周</td></tr><tr><td style="text-align:left">运输</td><td style="text-align:left">SensorDeck 将套件寄送给评估团队</td></tr><tr><td style="text-align:left">归还要求</td><td style="text-align:left">评估期结束后必须归还套件</td></tr><tr><td style="text-align:left">退货运费</td><td style="text-align:left">SensorDeck 提供退货标签</td></tr></tbody></table>
+<p>评估套件始终为 SensorDeck 的财产，严格限于技术评估目的。</p>
+<h1>评估套件包含内容</h1>
+<p>Atlas 评估套件包含一个参考传感器组合，旨在暴露跨多个时序域的真实同步问题。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="包含的硬件">包含的硬件<a href="#包含的硬件" class="hash-link" aria-label="包含的硬件的直接链接" title="包含的硬件的直接链接" translate="no">​</a></h2>
+<table><thead><tr><th style="text-align:left">组件</th><th style="text-align:left">角色</th></tr></thead><tbody><tr><td style="text-align:left">Atlas 参考板</td><td style="text-align:left">传感器聚合和时序骨干</td></tr><tr><td style="text-align:left">USB UVC 摄像头 (罗技 C270)</td><td style="text-align:left">标准主机时间戳摄像头</td></tr><tr><td style="text-align:left">以太网激光雷达 (Livox MID-360)</td><td style="text-align:left">独立时钟域传感器</td></tr><tr><td style="text-align:left">IMU (VectorNav VN-100)</td><td style="text-align:left">高速惯性传感器</td></tr><tr><td style="text-align:left">GNSS (u-blox ZED-F9P)</td><td style="text-align:left">全球 PPS 参考时钟</td></tr><tr><td style="text-align:left">GNSS 天线</td><td style="text-align:left">PPS 时序参考（包含）</td></tr><tr><td style="text-align:left">工业级 USB 线缆</td><td style="text-align:left">传感器连接</td></tr><tr><td style="text-align:left">PPS 时序线缆</td><td style="text-align:left">GNSS → Atlas 时序校准</td></tr></tbody></table>
+<p>该传感器组合特意包含了多个独立的时序域，以便可以清晰地观察到同步的改进。</p>
+<p>特意选用罗技 C270 作为标准的 UVC 摄像头（无硬件同步引脚），以展示即使对于通常依赖主机时间戳的传感器，Atlas 如何改善其时序。</p>
+<h1>GNSS 时序说明</h1>
+<p>随附的 u-blox ZED-F9P GNSS 接收器提供一个 PPS 时序参考。</p>
+<p>为获得最佳效果，GNSS 天线应放置在：
+•   靠近窗户
+•   室外
+•   或能部分看到天空的位置</p>
+<p>但是，如果无法获得 GNSS 锁定，Atlas 也可以在<strong>内部时间权威模式</strong>下运行，从而允许在室内实验室或无直接天空视野的设施内进行评估。</p>
+<h1>套件到达前的准备工作</h1>
+<p>大多数机器人团队可以在评估套件到达之前准备他们的计算平台。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="必需的计算平台">必需的计算平台<a href="#必需的计算平台" class="hash-link" aria-label="必需的计算平台的直接链接" title="必需的计算平台的直接链接" translate="no">​</a></h2>
+<p>任何能够运行 ROS2 的 Linux 单板计算机。</p>
+<p>例如：
+•   NVIDIA Jetson Orin Nano
+•   NVIDIA Jetson Xavier
+•   Intel NUC
+•   x86 ROS 工作站</p>
+<p><strong>推荐环境：</strong>
+Ubuntu 22.04
+ROS2 Humble
+Python 3.10+</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="必需的网络设置">必需的网络设置<a href="#必需的网络设置" class="hash-link" aria-label="必需的网络设置的直接链接" title="必需的网络设置的直接链接" translate="no">​</a></h2>
+<p>系统应允许：
+•   USB 设备访问
+•   用于激光雷达的以太网连接
+•   ROS2 主题传输</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="软件依赖项">软件依赖项<a href="#软件依赖项" class="hash-link" aria-label="软件依赖项的直接链接" title="软件依赖项的直接链接" translate="no">​</a></h2>
+<p>安装以下 ROS2 驱动：
+usb_cam
+livox_ros2_driver
+vectornav_driver</p>
+<p>这些驱动独立于 Atlas 运行。</p>
+<p><strong>Atlas 不修改传感器固件或驱动程序。</strong></p>
+<h1>评估系统架构</h1>
+<p>![Atlas 评估系统架构](/img/Fig 19.png)</p>
+<p>本次评估特意使用了具有独立时钟的传感器。</p>
+<p>此设置允许 Atlas 展示跨域传感器对齐的能力。</p>
+<h1>30分钟评估流程</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-1--连接传感器">步骤 1 — 连接传感器<a href="#步骤-1--连接传感器" class="hash-link" aria-label="步骤 1 — 连接传感器的直接链接" title="步骤 1 — 连接传感器的直接链接" translate="no">​</a></h2>
+<p>摄像头 → Atlas USB
+IMU → Atlas I²C
+GNSS → Atlas UART + PPS</p>
+<p>Atlas → 通过 USB 连接至单板计算机</p>
+<p>激光雷达直接连接至单板计算机以太网口。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-2--启动-atlas">步骤 2 — 启动 Atlas<a href="#步骤-2--启动-atlas" class="hash-link" aria-label="步骤 2 — 启动 Atlas的直接链接" title="步骤 2 — 启动 Atlas的直接链接" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">fusion_start </span><br></span></code></pre></div></div>
+<p>预期输出：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Fusion detected</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">PPS locked</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Timing engine active</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-3--启动传感器驱动">步骤 3 — 启动传感器驱动<a href="#步骤-3--启动传感器驱动" class="hash-link" aria-label="步骤 3 — 启动传感器驱动的直接链接" title="步骤 3 — 启动传感器驱动的直接链接" translate="no">​</a></h2>
+<p>启动 ROS2 驱动：</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ros2 launch livox_ros2_driver</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ros2 run usb_cam usb_cam_node</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">ros2 run vectornav_driver imu_node</span><br></span></code></pre></div></div>
+<p>验证主题：</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ros2 topic list</span><br></span></code></pre></div></div>
+<p><strong>示例：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">/camera/image</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/livox/lidar</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">/imu/data</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-4--基准时序测量">步骤 4 — 基准时序测量<a href="#步骤-4--基准时序测量" class="hash-link" aria-label="步骤 4 — 基准时序测量的直接链接" title="步骤 4 — 基准时序测量的直接链接" translate="no">​</a></h2>
+<p>测量跨传感器时间戳漂移。</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dsil_analyze --baseline</span><br></span></code></pre></div></div>
+<p><strong>示例结果：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">摄像头 ↔ 激光雷达 偏移: 12 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">IMU ↔ 激光雷达 偏移: 8 ms</span><br></span></code></pre></div></div>
+<p>这确认了系统当前存在传感器未同步的问题。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-5--激活-dsil-同步">步骤 5 — 激活 DSIL 同步<a href="#步骤-5--激活-dsil-同步" class="hash-link" aria-label="步骤 5 — 激活 DSIL 同步的直接链接" title="步骤 5 — 激活 DSIL 同步的直接链接" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dsil_sync</span><br></span></code></pre></div></div>
+<p>DSIL 应用一个动态时间戳偏移映射，将每个传感器的到达时间映射到 Atlas 硬件时序边界。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-6--验证同步">步骤 6 — 验证同步<a href="#步骤-6--验证同步" class="hash-link" aria-label="步骤 6 — 验证同步的直接链接" title="步骤 6 — 验证同步的直接链接" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dsil_sync_check</span><br></span></code></pre></div></div>
+<p><strong>预期结果：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">摄像头 ↔ 激光雷达 偏移: 0.9 ms</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">IMU ↔ 激光雷达 偏移: 0.5 ms</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="步骤-7--生成可视化图表">步骤 7 — 生成可视化图表<a href="#步骤-7--生成可视化图表" class="hash-link" aria-label="步骤 7 — 生成可视化图表的直接链接" title="步骤 7 — 生成可视化图表的直接链接" translate="no">​</a></h2>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dsil_plot</span><br></span></code></pre></div></div>
+<p><strong>输出文件：</strong></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">offset_before.png</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">offset_after.png</span><br></span></code></pre></div></div>
+<p>这些图表直观地展示了时间戳对齐的改进。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="通过标准">通过标准<a href="#通过标准" class="hash-link" aria-label="通过标准的直接链接" title="通过标准的直接链接" translate="no">​</a></h2>
+<p>当达到以下指标时，评估即视为成功。</p>
+<table><thead><tr><th style="text-align:left">指标</th><th style="text-align:left">目标</th></tr></thead><tbody><tr><td style="text-align:left">跨传感器偏移</td><td style="text-align:left">&lt; 1 ms</td></tr><tr><td style="text-align:left">同步稳定性</td><td style="text-align:left">&gt; 30 分钟</td></tr><tr><td style="text-align:left">时间基准</td><td style="text-align:left">GNSS 校准</td></tr><tr><td style="text-align:left">传感器驱动</td><td style="text-align:left">保持不变</td></tr></tbody></table>
+<p>这表明 Atlas 能够在多种传感器类型之间建立一个<strong>确定性的时序边界</strong>。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="评估性能报告">评估性能报告<a href="#评估性能报告" class="hash-link" aria-label="评估性能报告的直接链接" title="评估性能报告的直接链接" translate="no">​</a></h2>
+<p>评估结束时，工程团队可以生成一页纸的性能报告。</p>
+<p>该报告通常包含：</p>
+<ul>
+<li class="">基准漂移测量</li>
+<li class="">同步后漂移测量</li>
+<li class="">同步改进图表</li>
+<li class="">系统架构图</li>
+</ul>
+<p><strong>示例结果：</strong></p>
+<table><thead><tr><th style="text-align:left">指标</th><th style="text-align:left">Atlas 前</th><th style="text-align:left">Atlas 后</th></tr></thead><tbody><tr><td style="text-align:left">摄像头 ↔ 激光雷达</td><td style="text-align:left">12 ms</td><td style="text-align:left">0.9 ms</td></tr><tr><td style="text-align:left">IMU ↔ 激光雷达</td><td style="text-align:left">8 ms</td><td style="text-align:left">0.5 ms</td></tr></tbody></table>
+<p>这份报告使工程负责人能够在内部提出清晰的建议。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="cto-推荐摘要">CTO 推荐摘要<a href="#cto-推荐摘要" class="hash-link" aria-label="CTO 推荐摘要的直接链接" title="CTO 推荐摘要的直接链接" translate="no">​</a></h2>
+<p>典型的内部推荐结构：</p>
+<p><strong>问题</strong>
+多传感器感知堆栈存在时间戳漂移和集成复杂的问题。</p>
+<p><strong>Atlas 结果</strong>
+在摄像头、激光雷达和 IMU 之间建立了确定性的时序边界。</p>
+<p><strong>影响</strong></p>
+<ul>
+<li class="">改善了 SLAM 的传感器对齐</li>
+<li class="">减少了感知管道的不确定性</li>
+<li class="">简化了集成架构</li>
+</ul>
+<p><strong>建议：</strong>
+推进至 OEM 集成试点评估。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="评估后的步骤">评估后的步骤<a href="#评估后的步骤" class="hash-link" aria-label="评估后的步骤的直接链接" title="评估后的步骤的直接链接" translate="no">​</a></h2>
+<p>如果评估显示出价值，团队通常会进入<strong>白标 OEM 集成试点</strong>阶段。</p>
+<p>该试点阶段旨在将 Atlas 适配到量产机器人平台。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="oem-试点计划包括">OEM 试点计划包括<a href="#oem-试点计划包括" class="hash-link" aria-label="OEM 试点计划包括的直接链接" title="OEM 试点计划包括的直接链接" translate="no">​</a></h3>
+<ul>
+<li class="">定制连接器配置</li>
+<li class="">传感器接口映射</li>
+<li class="">电源分配设计</li>
+<li class="">机械安装集成</li>
+<li class="">软件集成支持</li>
+</ul>
+<p>该试点计划将产出一个为机器人平台定制的白标 Atlas 参考设计。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="oem-部署验证">OEM 部署验证<a href="#oem-部署验证" class="hash-link" aria-label="OEM 部署验证的直接链接" title="OEM 部署验证的直接链接" translate="no">​</a></h2>
+<p>在 OEM 试点阶段，将在真实的机器人系统内进行第二次验证。</p>
+<p><strong>验证的指标：</strong></p>
+<ul>
+<li class="">完整机器人传感器同步</li>
+<li class="">感知管道稳定性</li>
+<li class="">系统延迟影响</li>
+<li class="">部署可靠性</li>
+<li class="">功耗与热行为</li>
+</ul>
+<p>验证通过后，Atlas 将成为机器人量产传感器基础设施的一部分。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="评估完成反馈">评估完成反馈<a href="#评估完成反馈" class="hash-link" aria-label="评估完成反馈的直接链接" title="评估完成反馈的直接链接" translate="no">​</a></h2>
+<p>完成评估后，我们请参与的团队提供简要的结果摘要。</p>
+<p>此反馈有助于改进 Atlas 平台，并确定进一步的合作是否有价值。</p>
+<p>提供反馈不产生任何义务。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="选项-a--准备讨论-oem-集成试点">选项 A — 准备讨论 OEM 集成试点<a href="#选项-a--准备讨论-oem-集成试点" class="hash-link" aria-label="选项 A — 准备讨论 OEM 集成试点的直接链接" title="选项 A — 准备讨论 OEM 集成试点的直接链接" translate="no">​</a></h3>
+<p>评估表明 Atlas 对我们的系统有价值。</p>
+<p>我们愿意讨论白标 OEM 集成试点。</p>
+<p><strong>可选备注：</strong>
+观察到的主要优势：</p>
+<ul>
+<li class="">
+<hr>
+</li>
+<li class="">
+<hr>
+</li>
+<li class="">
+<hr>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="选项-b--评估完成归还套件">选项 B — 评估完成，归还套件<a href="#选项-b--评估完成归还套件" class="hash-link" aria-label="选项 B — 评估完成，归还套件的直接链接" title="选项 B — 评估完成，归还套件的直接链接" translate="no">​</a></h3>
+<p>评估已完成，我们将归还套件。</p>
+<p>目前我们暂无推进集成的计划。</p>
+<p><strong>可选反馈（1-3 个原因）：</strong>
+原因 1：</p>
+<p>原因 2：</p>
+<p>原因 3：</p>
+<p><strong>典型原因可能包括：</strong></p>
+<ul>
+<li class="">与当前架构不符</li>
+<li class="">内部已有时序基础设施</li>
+<li class="">传感器组合路线图已更改</li>
+<li class="">预算或项目时间限制</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="选项-c--未来可能有兴趣">选项 C — 未来可能有兴趣<a href="#选项-c--未来可能有兴趣" class="hash-link" aria-label="选项 C — 未来可能有兴趣的直接链接" title="选项 C — 未来可能有兴趣的直接链接" translate="no">​</a></h3>
+<p>评估很有帮助，但我们目前尚未准备就绪。</p>
+<p><strong>可选后续信息：</strong>
+首选联系方式：</p>
+<p>可能的后续跟进时间：</p>
+<p>□ 3 个月
+□ 6 个月
+□ 12 个月
+□ 其他：__________</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="归还评估套件">归还评估套件<a href="#归还评估套件" class="hash-link" aria-label="归还评估套件的直接链接" title="归还评估套件的直接链接" translate="no">​</a></h2>
+<p>评估期结束后，请使用提供的退货标签寄回套件。</p>
+<p><strong>退货地址：</strong>
+SensorDeck Evaluation Program
+ATTN: Atlas Evaluation Returns
+[退货地址占位符]
+[城市, 州, 邮政编码]
+美国</p>
+<p>请确保退回套件中最初提供的所有组件。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="最后说明">最后说明<a href="#最后说明" class="hash-link" aria-label="最后说明的直接链接" title="最后说明的直接链接" translate="no">​</a></h2>
+<p>我们感谢工程团队花时间评估新的基础设施。</p>
+<p>即使 Atlas 当前不是最合适的选择，评估计划的反馈也有助于改进未来的平台开发。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="下一步是什么">下一步是什么<a href="#下一步是什么" class="hash-link" aria-label="下一步是什么的直接链接" title="下一步是什么的直接链接" translate="no">​</a></h2>
+<p>完成此评估后，您已验证了 Atlas 能够：</p>
+<ul>
+<li class="">建立确定性的时序边界</li>
+<li class="">简化传感器集成</li>
+<li class="">在不修改现有堆栈的情况下完成集成</li>
+</ul>
+<p>至此，Atlas 已不再是原型组件。</p>
+<p>它已准备好集成到您的量产系统中。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="oem-集成路径">OEM 集成路径<a href="#oem-集成路径" class="hash-link" aria-label="OEM 集成路径的直接链接" title="OEM 集成路径的直接链接" translate="no">​</a></h2>
+<p>Atlas 旨在直接从评估过渡到 OEM 部署。</p>
+<p>您可以通过三种方式将 Atlas 集成到您的产品中：</p>
+<ul>
+<li class="">使用 Atlas 作为参考集成平台</li>
+<li class="">将 Atlas 嵌入您的系统架构</li>
+<li class="">通过白标 (OEM) 集成计划采用 Atlas</li>
+</ul>
+<p>Atlas 消除了重新设计以下系统的需求：</p>
+<ul>
+<li class="">传感器布线架构</li>
+<li class="">时序同步系统</li>
+<li class="">板载电源分配</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="团队转向量产的原因">团队转向量产的原因<a href="#团队转向量产的原因" class="hash-link" aria-label="团队转向量产的原因的直接链接" title="团队转向量产的原因的直接链接" translate="no">​</a></h2>
+<p>评估后，机器人团队通常会继续推进，因为：</p>
+<ul>
+<li class="">集成模型无需更改驱动程序</li>
+<li class="">确定性时序提高了系统可靠性</li>
+<li class="">系统架构变得更简单、更具可扩展性</li>
+</ul>
+<p>Atlas 用可重用的基础设施层取代了重复性的工程工作。</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="下一步">下一步<a href="#下一步" class="hash-link" aria-label="下一步的直接链接" title="下一步的直接链接" translate="no">​</a></h2>
+<p>如果 Atlas 满足您的系统要求，下一步就是<a class="" href="/atlas-docs-cn/evaluation/oem-pilot"><strong>开始 OEM 集成试点</strong></a>。</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="集成资源">集成资源<a href="#集成资源" class="hash-link" aria-label="集成资源的直接链接" title="集成资源的直接链接" translate="no">​</a></h3>
+<p>Atlas 提供更多评估和部署材料：</p>
+<p>集成与部署常见问题</p>
+<ul>
+<li class="">👉 <a class="" href="/atlas-docs-cn/evaluation/faq">集成问答FAQ</a></li>
+<li class="">👉 <a class="" href="/atlas-docs-cn/evaluation/download">下载中心</a></li>
+</ul>
+<hr>
+<p>Atlas 天枢系列</p>
+<p>是机器人系统的确定性传感器基础设施层。</p>
+<p>将传感器集成从定制化工程工作转变为可部署的基础设施。</p>
+<p>如果 Atlas 满足您的系统需求，下一步就是进行 OEM 集成。</p>
+<p>👉 开启 <a class="" href="/atlas-docs-cn/evaluation/oem-pilot"><strong>Atlas OEM / 白标集成计划</strong></a> <em>开始构建您的机器人传感器基础设施层 联系我们的技术团队获取支持。微信ID: jchen66</em>。</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/sensordeck/atlas-docs-cn/tree/main/docs/software/evaluation-kit.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--prev" href="/atlas-docs-cn/software/ros2-integration"><div class="pagination-nav__sublabel">上一页</div><div class="pagination-nav__label">ROS2 集成</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/atlas-docs-cn/evaluation/oem-pilot"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">Atlas 白标 OEM 集成试点计划</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#本章定位" class="table-of-contents__link toc-highlight">本章定位</a></li><li><a href="#包含的硬件" class="table-of-contents__link toc-highlight">包含的硬件</a></li><li><a href="#必需的计算平台" class="table-of-contents__link toc-highlight">必需的计算平台</a></li><li><a href="#必需的网络设置" class="table-of-contents__link toc-highlight">必需的网络设置</a></li><li><a href="#软件依赖项" class="table-of-contents__link toc-highlight">软件依赖项</a></li><li><a href="#步骤-1--连接传感器" class="table-of-contents__link toc-highlight">步骤 1 — 连接传感器</a></li><li><a href="#步骤-2--启动-atlas" class="table-of-contents__link toc-highlight">步骤 2 — 启动 Atlas</a></li><li><a href="#步骤-3--启动传感器驱动" class="table-of-contents__link toc-highlight">步骤 3 — 启动传感器驱动</a></li><li><a href="#步骤-4--基准时序测量" class="table-of-contents__link toc-highlight">步骤 4 — 基准时序测量</a></li><li><a href="#步骤-5--激活-dsil-同步" class="table-of-contents__link toc-highlight">步骤 5 — 激活 DSIL 同步</a></li><li><a href="#步骤-6--验证同步" class="table-of-contents__link toc-highlight">步骤 6 — 验证同步</a></li><li><a href="#步骤-7--生成可视化图表" class="table-of-contents__link toc-highlight">步骤 7 — 生成可视化图表</a></li><li><a href="#通过标准" class="table-of-contents__link toc-highlight">通过标准</a></li><li><a href="#评估性能报告" class="table-of-contents__link toc-highlight">评估性能报告</a></li><li><a href="#cto-推荐摘要" class="table-of-contents__link toc-highlight">CTO 推荐摘要</a></li><li><a href="#评估后的步骤" class="table-of-contents__link toc-highlight">评估后的步骤</a><ul><li><a href="#oem-试点计划包括" class="table-of-contents__link toc-highlight">OEM 试点计划包括</a></li></ul></li><li><a href="#oem-部署验证" class="table-of-contents__link toc-highlight">OEM 部署验证</a></li><li><a href="#评估完成反馈" class="table-of-contents__link toc-highlight">评估完成反馈</a><ul><li><a href="#选项-a--准备讨论-oem-集成试点" class="table-of-contents__link toc-highlight">选项 A — 准备讨论 OEM 集成试点</a></li><li><a href="#选项-b--评估完成归还套件" class="table-of-contents__link toc-highlight">选项 B — 评估完成，归还套件</a></li><li><a href="#选项-c--未来可能有兴趣" class="table-of-contents__link toc-highlight">选项 C — 未来可能有兴趣</a></li></ul></li><li><a href="#归还评估套件" class="table-of-contents__link toc-highlight">归还评估套件</a></li><li><a href="#最后说明" class="table-of-contents__link toc-highlight">最后说明</a></li><li><a href="#下一步是什么" class="table-of-contents__link toc-highlight">下一步是什么</a></li><li><a href="#oem-集成路径" class="table-of-contents__link toc-highlight">OEM 集成路径</a></li><li><a href="#团队转向量产的原因" class="table-of-contents__link toc-highlight">团队转向量产的原因</a></li><li><a href="#下一步" class="table-of-contents__link toc-highlight">下一步</a><ul><li><a href="#集成资源" class="table-of-contents__link toc-highlight">集成资源</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">文档</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/intro">Atlas 天枢开发文档</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/sensor-synchronization">传感器同步</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/hardware/fusion-platform">硬件架构</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/DSIL-SDK">DSIL SDK</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/ros2-integration">ROS2 集成</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/software/evaluation-kit">Atlas 评估套件</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/evaluation/oem-pilot">Atlas 白标OEM集成试点计划</a></li><li class="footer__item"><a class="footer__link-item" href="/atlas-docs-cn/evaluation/download">下载中心</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">更多</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/sensordeck/atlas-docs-cn" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 SensorDeck Inc.</div></div></div></footer></div>
+</body>
+</html>
