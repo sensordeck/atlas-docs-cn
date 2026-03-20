@@ -22,7 +22,7 @@ Atlas 在机器人系统中引入：
 
 ## 为真实机器人系统设计
 
-![Atlas 3cards](img/3cards.png)
+![Atlas 3cards](/img/3cards.png)
 
 ---
 
