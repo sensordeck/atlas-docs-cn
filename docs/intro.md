@@ -102,12 +102,18 @@ ros2 launch atlas_dsil_bridge telemetry.launch.py
 
 ---
 
+### 1. [传感器同步](./software/sensor-synchronization.md)
+
+理解 Atlas 所要解决的核心问题。
+
 ### 4. 跨平台基础设施
 
 Atlas 可跨以下场景复用：
 
 - 不同机器人平台  
 - 不同产品 SKU  
+
+### 2. [硬件架构](./hardware/fusion-platform.md)
 
 复用同一套传感器基础设施。
 
@@ -117,15 +123,23 @@ Atlas 可跨以下场景复用：
 
 Atlas 位于：
 
+### 3. [DSIL 软件开发包](./software/dsil-sdk.md)
+了解 Atlas 硬件如何通过软件实现其价值。
+
 **传感器层 → Atlas → 机器人算力平台**
 
 ### 数据路径
 
 传感器 → Atlas（同步 + 聚合） → 主控计算平台
 
+### 4. [ROS2 集成](./software/ros2-integration.md)
+将 Atlas 部署到您现有的机器人技术栈中。
+
 ---
 
 ## 文档阅读路径
+
+👉 [**定义集成模型**](./evaluation/oem-pilot.md)
 
 建议按以下顺序阅读：
 
@@ -145,6 +159,8 @@ Atlas 位于：
 
 理解 Atlas 如何实现：
 
+👉 [**申请 Atlas 评估套件**](./software/evaluation-kit.md)
+
 - 硬件同步  
 - 统一供电  
 - 接口整合  
@@ -152,6 +168,9 @@ Atlas 位于：
 👉 定义系统结构  
 
 ---
+
+-   👉 [集成问答FAQ](./evaluation/faq.md)
+-   👉 [下载中心](./evaluation/download.md)
 
 ### 3. DSIL SDK
 
@@ -216,3 +235,5 @@ Atlas 是机器人系统的：
 将传感器集成从“工程问题”转变为“系统能力”。
 
 👉 通过 [评估套件](./software/evaluation-kit.md) 在您的系统中探索 Atlas 天枢
+
+通过[**评估套件**](./software/evaluation-kit.md)在您的系统中探索Atlas 天枢。
