@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkatlas_docs_cn=globalThis.webpackChunkatlas_docs_cn||[]).push([[634],{192(a,s,t){t.r(s),t.d(s,{default:()=>o});t(6540);var c=t(6347),n=t(6025),l=t(4848);function o(){return(0,l.jsx)(c.rd,{to:(0,n.Ay)("/intro")})}}}]);
