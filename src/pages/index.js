@@ -1,6 +1,6 @@
 import React from 'react';
-import { Redirect } from '@docusaurus/router';
+import {Redirect} from '@docusaurus/router';
 
 export default function Home() {
-  return <Redirect to="/atlas-docs-cn/docs/intro" />;
+  return <Redirect to="/intro" />;
 }

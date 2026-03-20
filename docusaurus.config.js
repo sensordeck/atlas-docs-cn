@@ -3,8 +3,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Atlas 天枢文档',
-  tagline: '机器人传感器确定性集成基础设施',
+  title: 'Atlas 天枢开发文档',
+  tagline: '面向机器人系统的确定性传感器基础设施',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -32,7 +32,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          routeBasePath: '/',   // ✅ FINAL DECISION
+          routeBasePath: '/',
           editUrl: 'https://github.com/sensordeck/atlas-docs-cn/tree/main/',
         },
         blog: false,
@@ -45,28 +45,17 @@ const config = {
 
   themeConfig:
     ({
-      image: 'img/logo.svg',
+      image: 'img/SensorDeck.png',
       colorMode: {
         respectPrefersColorScheme: true,
       },
       navbar: {
         title: 'Atlas 天枢文档',
         logo: {
-          alt: 'Atlas Logo',
-          src: 'img/logo.svg',
+          alt: 'SensorDeck Logo',
+          src: 'img/SensorDeck.png',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '文档',
-          },
-          {
-            to: '/intro',   // ✅ MUST match routeBasePath '/'
-            label: '快速开始',
-            position: 'left',
-          },
           {
             href: 'https://github.com/sensordeck/atlas-docs-cn',
             label: 'GitHub',
@@ -74,31 +63,39 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: '文档',
-            items: [
-              {
-                label: '文档导读',
-                to: '/intro',   // ✅ MUST match routeBasePath '/'
-              },
-            ],
-          },
-          {
-            title: '更多',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/sensordeck/atlas-docs-cn',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} SensorDeck. Built with Docusaurus.`,
-      },
-      prism: {
+     footer: {
+  style: 'dark',
+  links: [
+    {
+      title: '文档',
+      items: [
+        { label: 'Atlas 天枢开发文档', to: '/intro' },
+
+        { label: '传感器同步', to: '/software/sensor-synchronization' },
+        { label: '硬件架构', to: '/hardware/fusion-platform' },
+
+        { label: 'DSIL SDK', to: '/software/DSIL-SDK' },
+        { label: 'ROS2 集成', to: '/software/ros2-integration' },
+
+        { label: 'Atlas 评估套件', to: '/software/evaluation-kit' },
+
+        { label: 'Atlas 白标OEM集成试点计划', to: '/evaluation/oem-pilot' },
+        { label: '下载中心', to: '/evaluation/download' },
+      ],
+    },
+    {
+      title: '更多',
+      items: [
+        {
+          label: 'GitHub',
+          href: 'https://github.com/sensordeck/atlas-docs-cn',
+        },
+      ],
+    },
+  ],
+  copyright: `Copyright © ${new Date().getFullYear()} SensorDeck Inc.`,
+},
+       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
