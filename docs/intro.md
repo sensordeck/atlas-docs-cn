@@ -5,7 +5,7 @@
 为 IMU、GNSS、LiDAR 等多源传感器提供 **微秒级统一时间基准**。  
 天枢系列（Atlas）是一套面向确定性机器人应用的高吞吐传感器基础设施。
 
-Atlas 在机器人系统中引入：
+Atlas 天枢系列在机器人系统中引入：
 
 - 硬件级时间权威（Time Authority）
 - 统一的传感器集成层（Sensor Infrastructure Layer）
