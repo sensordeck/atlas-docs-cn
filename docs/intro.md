@@ -1,4 +1,7 @@
 ---
+id: intro
+title: Atlas 天枢开发文档
+sidebar_label: Atlas 天枢开发文档
 slug: /
 ---
 
