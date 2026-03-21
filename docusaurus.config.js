@@ -69,7 +69,7 @@ const config = {
     {
       title: '文档',
       items: [
-        { label: 'Atlas 天枢开发文档', to: '/intro' },
+        { label: 'Atlas 天枢开发文档', to: '/' },
 
         { label: '传感器同步', to: '/software/sensor-synchronization' },
         { label: '硬件架构', to: '/hardware/fusion-platform' },
