@@ -129,7 +129,7 @@ vectornav_driver
 
 # 评估系统架构
 
-![Atlas 评估系统架构](/img/Fig 19.png)
+![Atlas 评估系统架构](/img/Fig-19.png)
 
 本次评估特意使用了具有独立时钟的传感器。
 
