@@ -319,7 +319,7 @@ DSIL 将同步从：
 
 在 DSIL 提供同步数据与系统可见性的基础上，下一步将聚焦于 Atlas 在真实机器人系统中的集成实践。
 
-👉 继续阅读 [ROS2 集成](/ros2-integration)
+👉 继续阅读 [ROS2 集成](/software/ros2-integration)
 
 ---
 
