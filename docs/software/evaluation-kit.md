@@ -193,12 +193,12 @@ dsil start
 
 **预期输出：**
 
-    Fusion detected:      OK
-    PPS locked:           OK
-    Timing engine active: OK
-    Power health:         OK
-    PnP state:            READY
-    Sensors detected:     3/3
+Fusion detected:      OK
+PPS locked:           OK
+Timing engine active: OK
+Power health:         OK
+PnP state:            READY
+Sensors detected:     3/3
     
 ### 步骤3：启动传感器驱动
 
