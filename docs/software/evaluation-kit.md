@@ -193,38 +193,43 @@ dsil start
 
 **预期输出：**
 
+```bash
 Fusion detected:      OK
 PPS locked:           OK
 Timing engine active: OK
 Power health:         OK
 PnP state:            READY
 Sensors detected:     3/3
+```
     
 ### 步骤3：启动传感器驱动
 
 启动ROS2驱动（Atlas不替换这些驱动）：
 
-    # USB摄像头
+    #### USB摄像头
     ros2 run usb_cam usb_cam_node_exe
     
-    # VN-100 IMU
+    #### VN-100 IMU
     ros2 run vectornav vectornav_node
     
-    # 注意：ZED-F9P通过Fusion V2的CDC流输出，不需要单独启动驱动
+    #### 注意：ZED-F9P通过Fusion V2的CDC流输出，不需要单独启动驱动
 
 验证话题：
 
 ```
 ros2 topic list
 ```
+
 **预期输出示例：**
 
-    /camera/image_raw
-    /imu/data
-    /atlas/status
-    /atlas/pps
-    /atlas/sync
-    /atlas/power_health
+```bash
+/camera/image_raw
+/imu/data
+/atlas/status
+/atlas/pps
+/atlas/sync
+/atlas/power_health
+```
 
 ---
 
