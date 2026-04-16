@@ -76,10 +76,10 @@ Atlas评估套件包含一个**锁定的参考传感器组合**，旨在暴露�
 
 | 组件 | 角色 | V0.1状态 |
 | :--- | :--- | :--- |
-| Fusion V2（GD32F407 + USB Hub） | 传感器聚合和时序骨干 | ✅ 锁定 |
-| USB UVC摄像头（罗技C270） | 标准主机时间戳摄像头（Tier 3） | ✅ 锁定 |
-| IMU（VectorNav VN-100） | 高速惯性传感器（Tier 1） | ✅ 锁定 |
-| GNSS（u-blox ZED-F9P） | 全球PPS参考时钟（Tier 1） | ✅ 锁定 |
+| Fusion V2（GD32F407 + USB Hub） | 传感器聚合和时序骨干 | 
+| USB UVC摄像头（罗技C270） | 标准主机时间戳摄像头（Tier 3）|
+| IMU（VectorNav VN-100） | 高速惯性传感器（Tier 1） |
+| GNSS（u-blox ZED-F9P） | 全球PPS参考时钟（Tier 1） |
 | GNSS天线 | PPS时序参考 | ✅ 包含 |
 | 工业级USB线缆 | 传感器连接 | ✅ 包含 |
 | PPS时序线缆 | GNSS → Atlas时序校准 | ✅ 包含 |
