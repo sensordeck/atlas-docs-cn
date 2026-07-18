@@ -63,7 +63,7 @@ Sensor / Bus / Power / Linux Runtime / ROS Topic
 
 Atlas Agent 是 Runtime Sensor Governance™ 的现场运行组件。
 
-Agent 在机器人主控板或指定运行环境中持续工作，负责四项核心能力：
+Agent 在机器人主控板或指定运行环境中持续24x7工作，负责四项核心能力：
 
 ## Observe
 
