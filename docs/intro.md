@@ -23,6 +23,8 @@ Atlas 建立的是机器人行业此前不存在的一层：
 
 > **Runtime Sensor Governance Infrastructure™**
 
+![Atlas 天枢系统](/img/11.png)
+
 ---
 
 ## 为什么需要 Atlas？
