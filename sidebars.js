@@ -1,56 +1,120 @@
-// @ts-check
-
 /**
- * @type {import('@docusaurus/plugin-content-docs').SidebarsConfig}
+ * Atlas Runtime Governance Documentation
  */
-const sidebars = {
+
+module.exports = {
   tutorialSidebar: [
+
+    'intro',
+
     {
-      type: 'doc',
-      id: 'intro',
-      label: 'Atlas 开发文档',
+      type: 'category',
+      label: '🚀 Why Atlas?',
+      collapsed: false,
+      items: [
+        'intro',
+      ],
     },
+
     {
-      type: 'doc',
-      id: 'software/sensor-synchronization',
-      label: '传感器同步',
+      type: 'category',
+      label: '📦 Products',
+      collapsed: false,
+      items: [
+
+        'products/runtime-sensor-governance',
+        'products/runtime-investigation',
+
+      ],
     },
+
     {
-      type: 'doc',
-      id: 'hardware/fusion-platform',
-      label: '硬件架构',
+      type: 'category',
+      label: '🏛 Atlas Platform',
+      collapsed: false,
+      items: [
+
+        'platform/atlas-agent',
+        'platform/runtime-dataset',
+        'platform/evidence-pack',
+        'platform/historical-rga',
+        'platform/investigation-workspace',
+        'platform/sensor-engagement-pack',
+        'platform/assist-vault',
+        'platform/cto-dashboard',
+
+      ],
     },
+
     {
-      type: 'doc',
-      id: 'software/DSIL-SDK',
-      label: 'DSIL SDK',
+      type: 'category',
+      label: '🔍 Runtime Investigation Workflow',
+      collapsed: false,
+      items: [
+
+        'workflow/runtime-investigation',
+        'workflow/investigation-context',
+        'workflow/investigation-result',
+        'workflow/lesson-learned',
+        'workflow/ticket-closure',
+
+      ],
     },
+
     {
-      type: 'doc',
-      id: 'software/ros2-integration',
-      label: 'ROS2 集成',
+      type: 'category',
+      label: '🧭 Runtime Boundary',
+      collapsed: false,
+      items: [
+
+        'boundary/runtime-boundary',
+        'boundary/runtime-profile',
+        'boundary/runtime-surfaces',
+        'boundary/runtime-timeline',
+
+      ],
     },
+
     {
-      type: 'doc',
-      id: 'software/evaluation-kit',
-      label: 'Atlas 评估套件',
+      type: 'category',
+      label: '🏭 OEM Deployment',
+      collapsed: false,
+      items: [
+
+        'deployment/oem',
+        'deployment/sensor-manufacturer',
+        'deployment/pilot',
+        'deployment/production',
+
+      ],
     },
+
     {
-      type: 'doc',
-      id: 'evaluation/oem-pilot',
-      label: 'Atlas 白标 OEM 集成试点计划',
+      type: 'category',
+      label: '💻 Developer',
+      collapsed: true,
+      items: [
+
+        'developer/sdk',
+        'developer/ros2',
+        'developer/api',
+        'developer/cli',
+
+      ],
     },
+
     {
-      type: 'doc',
-      id: 'evaluation/faq',
-      label: '集成问答 FAQ',
+      type: 'category',
+      label: '📚 Reference',
+      collapsed: true,
+      items: [
+
+        'reference/faq',
+        'reference/download',
+        'reference/release-notes',
+
+      ],
     },
-    {
-      type: 'doc',
-      id: 'evaluation/download',
-      label: '下载中心',
-    },
+
   ],
 };
-
-export default sidebars;
