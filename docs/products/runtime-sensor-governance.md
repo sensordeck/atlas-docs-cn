@@ -11,7 +11,7 @@ Atlas Runtime Sensor Governance™ 是一套面向机器人传感器运行时边
 
 它将传感器、总线、电源、Linux Runtime、Driver 与 ROS Topic 之间分散的运行时数据，组织为可保留、可导出、可调查的 Runtime Evidence。
 
-Runtime Sensor Governance™ 的核心不是生成更多日志，而是建立一条持续运行的证据链：
+Runtime Sensor Governance™ 的核心不是生成更多日志，而是建立一条由Atlas Agent持续观查的运行时证据链：
 
 ```text
 Observe
@@ -23,7 +23,7 @@ Retain
 Export
 ```
 
-当 Runtime Execution Failure（REF）发生时，Atlas 可以根据人工提供的事件时段，或运行时异常与跨数据流关联，生成标准化 Evidence Pack，并进一步形成 Investigation Tier Candidate。
+当 Runtime Execution Failure（REF）发生时，Atlas 可以根据人工提供的事件时段，或运行时异常与跨数据流关联，生成标准化 Evidence Pack，并进一步形成调查对象 Investigation Tier Candidate。
 
 ---
 
