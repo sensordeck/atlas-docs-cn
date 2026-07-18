@@ -399,11 +399,11 @@ Atlas 组织证据、提供历史上下文并缩小调查范围，但不替代�
 
 Atlas Documentation：
 
-<https://docs.sensordeck.tech>
+[Atlas Documentation](https://docs.sensordeck.tech)
 
 中文文档：
 
-<https://sensordeck.github.io/atlas-docs-cn/>
+[Atlas 中文文档](https://sensordeck.github.io/atlas-docs-cn/)
 
 ### Request Demo
 
