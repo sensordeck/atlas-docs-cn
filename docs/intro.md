@@ -9,7 +9,7 @@ slug: /
 
 ## 机器人运行时传感器治理基础设施
 
-Atlas 是一套面向机器人 OEM 与传感器厂商的运行时治理基础设施（Runtime Governance Infrastructure）。
+Atlas 天枢是一套面向机器人 OEM 与传感器厂商的运行时治理基础设施（Runtime Governance Infrastructure）。
 
 不同于传统传感器 SDK、驱动程序或日志工具，Atlas 持续观察机器人运行时环境，将海量运行时数据组织成可调查、可复用、可持续积累的工程资产。
 
@@ -21,7 +21,7 @@ Atlas 建立的是机器人行业此前不存在的一层：
 
 ---
 
-# 为什么需要 Atlas？
+# 为什么需要 Atlas 天枢？
 
 机器人行业最大的成本，并不是事故本身。
 
@@ -48,7 +48,7 @@ Atlas 建立的是机器人行业此前不存在的一层：
 
 即使是同一台机器人，也可能产生完全不同的运行时行为。
 
-事故发生后：
+REF事故发生后：
 
 OEM 收集日志。
 
@@ -66,7 +66,7 @@ OEM 收集日志。
 
 ---
 
-# Atlas 改变什么？
+# Atlas 天枢改变什么？
 
 > **Atlas 不只是帮助完成一次调查。**
 >
@@ -116,9 +116,9 @@ Atlas Agent 收集日志
       ↓
 生成证据包 Evidence Pack
       ↓
-召回历史排查案例 Historical Runtime Governance Asset (RGA) Recall
+召回历史排查案例 Historical RGA Recall
       ↓
-复用历史调查结果 / 经验分享
+复用历史调查结果 / 经验分享 (IR + LL)
       ↓
 完成调查
       ↓
@@ -127,12 +127,12 @@ Atlas Agent 收集日志
 未来持续复用
 ```
 
-Atlas 自动召回 Historical RGA。
+Atlas 自动召回历史排查案例 Historical Runtime Governance Asset (RGA)
 
 调查团队首先参考历史：
 
-- Investigation Result（IR）调查结果
-- Lesson Learned（LL）经验分享
+- 调查结果 Investigation Result（IR）
+- 经验分享 Lesson Learned（LL）
 
 快速缩小调查范围。
 
@@ -144,9 +144,9 @@ Atlas 自动召回 Historical RGA。
 
 调查结束后，新产生的：
 
-- Investigation Result（IR）
-- Lesson Learned（LL）
-- Runtime Governance Asset（RGA）
+- 调查结果（IR）
+- 经验分享（LL）
+- 排查案例（RGA）
 
 都会持续进入组织知识库。
 
@@ -178,7 +178,7 @@ Atlas 将一次事故，转化为整个组织未来持续增长的工程能力�
 
 > **工程师负责创造未来。**
 >
-> **Atlas 负责记住过去，应用并治理运行时事故。**
+> **Atlas 负责记住过去。**
 
 ---
 
@@ -191,7 +191,7 @@ Atlas 将一次事故，转化为整个组织未来持续增长的工程能力�
 帮助传感器厂建立运行时治理体系：
 
 - Runtime Profiles（运行时档案）
-- Historical Runtime Governance Assets（传感器历史排查案例召回)
+- Historical RGA（传感器历史排查案例)
 - OEM 协同调查流程（Engagement Workflow）
 - Sensor Knowledge Vault（传感器知识库）
 
@@ -206,7 +206,7 @@ Atlas 将一次事故，转化为整个组织未来持续增长的工程能力�
 - Runtime Dataset（运行时数据采集）
 - Evidence Pack（运行时证据包）
 - Historical RGA Recall（历史排查案例召回）
-- Sensor Engagement Pack（SEGP）
+- Sensor Engagement Pack（OEM 协同调查流程）
 - Assist Vault（组织调查知识库）
 - CTO Runtime Governance Dashboard（CTO 运行时治理总览）
 
