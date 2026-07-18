@@ -5,14 +5,13 @@
  * 避免 Docusaurus 因缺少文档而构建失败。
  */
 
-module.exports = {
+const sidebars = {
   tutorialSidebar: [
     {
       type: 'doc',
       id: 'intro',
       label: 'Atlas Runtime Governance',
     },
-
     {
       type: 'category',
       label: '现有技术文档',
@@ -24,7 +23,6 @@ module.exports = {
         'software/ros2-integration',
       ],
     },
-
     {
       type: 'category',
       label: '评估与集成',
@@ -39,5 +37,4 @@ module.exports = {
   ],
 };
 
-  ],
-};
+export default sidebars;
