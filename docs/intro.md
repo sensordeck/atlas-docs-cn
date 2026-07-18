@@ -83,7 +83,7 @@ Robot OEM
 - 持续采集 Runtime Dataset
 - 自动生成证据包 Evidence Pack (EP)
 - 排查历史案例匹配 Historical RGA Recall
-- 与 传感器厂协同调查工作流程 Sensor Engagement Pack (SEGP)
+- 与传感器厂协同调查工作流程 Sensor Engagement Pack (SEGP)
 - 建立排查知识库 Assist Vault
 - 生成运行时调查总览 CTO REF Dashboard
 
