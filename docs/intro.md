@@ -1,13 +1,18 @@
 ---
 id: intro
-title: Atlas Runtime Sensor Governance™
-sidebar_label: Atlas Runtime Sensor Governance™
+title: Atlas Runtime Governance
+sidebar_label: Atlas Runtime Governance
 slug: /
+
+description: Atlas Runtime Governance Documentation
+
+toc_min_heading_level: 2
+toc_max_heading_level: 2
 ---
 
-# Atlas Runtime Sensor Governance™
+# Atlas Runtime Governance
 
-## 机器人运行时传感器治理基础设施
+**机器人运行时传感器治理基础设施**
 
 Atlas 天枢是一套面向机器人 OEM 与传感器厂商的运行时治理基础设施（Runtime Governance Infrastructure）。
 
@@ -91,7 +96,7 @@ OEM、传感器厂与研发团队，不再各自整理不同版本的日志，�
 
 ---
 
-### 每一次调查，都从历史开始
+## 每一次调查，都从历史开始
 
 传统调查：
 
@@ -140,7 +145,7 @@ Atlas 自动召回历史排查案例 Historical Runtime Governance Asset (RGA)
 
 ---
 
-### 每一次事故，都增加组织能力
+## 每一次事故，都增加组织能力
 
 调查结束后，新产生的：
 
@@ -156,7 +161,7 @@ Atlas 将一次事故，转化为整个组织未来持续增长的工程能力�
 
 ---
 
-### 让工程团队继续创造价值
+## 让工程团队继续创造价值
 
 机器人企业最重要的资源，是工程师。
 
