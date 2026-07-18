@@ -220,6 +220,4 @@ Atlas 的价值在于：
 
 # 下一步阅读
 
-- Runtime Governance Philosophy
-- Runtime Sensor Governance™
-- Runtime Investigation™
+- Runtime Governance Principle
