@@ -18,13 +18,13 @@ Atlas 天枢面向机器人 OEM 与传感器厂商，持续观察 Sensor 到 SBC
 > **From before deployment to after deployment.**  
 > **Observe. Understand. Investigate. Improve. Reuse.**
 
-![Atlas Runtime Governance](/img/11.png)
-
 Atlas 不替代 ROS 2、传感器驱动、Fleet Management、工单系统或现有研发工具链。
 
 Atlas 建立的是机器人行业此前缺失的一层：
 
 > **Runtime Sensor Governance Infrastructure™**
+
+![Atlas Runtime Governance](/img/11.png)
 
 ---
 
@@ -57,21 +57,23 @@ Atlas 建立的是机器人行业此前缺失的一层：
 Atlas 将运行时事件组织为一条完整的证据与知识链：
 
 ```text
+Atlas Agent
+    ↓
 Observe
     ↓
 Persist
     ↓
 Retain
     ↓
-Evidence Pack
+Evidence Pack (证据包)
     ↓
-Historical RGA Recall
+Historical RGA Recall (历史排查案例召回）
     ↓
 OEM / Sensor Investigation
     ↓
-IR / LL
+IR  (Investigation Result 调查结果) / LL (Lesson Learned 经验沉淀）
     ↓
-Assist Vault
+Assist Vault （运行时知识资产库）
     ↓
 Future REF Reuse
 ```
