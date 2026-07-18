@@ -1,40 +1,70 @@
 /**
  * Atlas Runtime Governance Documentation
- *
- * 当前版本只引用仓库内已经存在的文档，
- * 避免 Docusaurus 因缺少文档而构建失败。
  */
 
-const sidebars = {
-  tutorialSidebar: [
+module.exports = {
+  docs: [
+    "intro",
+
     {
-      type: 'doc',
-      id: 'intro',
-      label: 'Atlas Runtime Governance',
-    },
-    {
-      type: 'category',
-      label: '现有技术文档',
-      collapsed: true,
+      type: "category",
+      label: "Foundation",
+      collapsed: false,
       items: [
-        'software/sensor-synchronization',
-        'hardware/fusion-platform',
-        'software/DSIL-SDK',
-        'software/ros2-integration',
+        "foundation/01-runtime-governance-philosophy",
+        "foundation/02-why-atlas",
+        "foundation/03-runtime-governance-principles",
       ],
     },
+
     {
-      type: 'category',
-      label: '评估与集成',
-      collapsed: true,
+      type: "category",
+      label: "Products",
+      collapsed: false,
       items: [
-        'software/evaluation-kit',
-        'evaluation/oem-pilot',
-        'evaluation/faq',
-        'evaluation/download',
+        "products/04-runtime-sensor-governance",
+        "products/05-runtime-investigation",
+      ],
+    },
+
+    {
+      type: "category",
+      label: "Platform",
+      collapsed: false,
+      items: [
+        "platform/06-atlas-agent",
+        "platform/07-runtime-surface",
+        "platform/08-runtime-dataset",
+        "platform/09-evidence-pack",
+        "platform/10-historical-rga",
+        "platform/11-investigation-context",
+        "platform/12-investigation-tier-candidate",
+        "platform/13-sensor-engagement-pack",
+        "platform/14-assist-vault",
+        "platform/15-cto-runtime-governance-dashboard",
+      ],
+    },
+
+    {
+      type: "category",
+      label: "Deployment",
+      collapsed: false,
+      items: [
+        "deployment/16-oem-deployment",
+        "deployment/17-sensor-manufacturer-deployment",
+        "deployment/18-pilot-production-deployment",
+      ],
+    },
+
+    {
+      type: "category",
+      label: "Reference",
+      collapsed: false,
+      items: [
+        "reference/16-faq",
+        "reference/17-downloads",
+        "reference/18-release-notes",
       ],
     },
   ],
 };
-
-export default sidebars;
