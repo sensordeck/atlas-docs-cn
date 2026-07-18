@@ -95,23 +95,23 @@ const config = {
           items: [
             {
               label: '基础理论',
-              to: '/category/foundation',
+              to: '/foundation/runtime-governance-philosophy',
             },
             {
               label: '产品体系',
-              to: '/category/products',
+              to: '/products/runtime-sensor-governance',
             },
             {
               label: '平台架构',
-              to: '/category/platform',
+              to: '/platform/atlas-agent',
             },
             {
               label: '部署指南',
-              to: '/category/deployment',
+              to: '/deployment/oem-deployment',
             },
             {
               label: '参考资料',
-              to: '/category/reference',
+              to: '/reference/faq',
             },
           ],
         },
@@ -139,7 +139,7 @@ const config = {
             },
             {
               label: 'Atlas 中文文档',
-              href: 'https://sensordeck.github.io/atlas-docs-cn/',
+              to: '/',
             },
             {
               label: 'GitHub',
