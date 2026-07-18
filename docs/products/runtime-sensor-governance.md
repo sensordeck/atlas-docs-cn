@@ -23,7 +23,7 @@ Retain
 Export
 ```
 
-当 Runtime Execution Failure（REF）发生时，Atlas 可以根据人工提供的事件时段，或运行时异常与跨数据流关联，生成标准化 Evidence Pack，并进一步形成调查对象 Investigation Tier Candidate。
+当 Runtime Execution Failure（REF）发生时，Atlas 可以根据人工提供的事件时段，或运行时异常与跨数据流关联，生成标准化 Evidence Pack，并进一步形成调查对象候选 Investigation Tier Candidate。
 
 ---
 
@@ -63,7 +63,7 @@ Sensor / Bus / Power / Linux Runtime / ROS Topic
 
 Atlas Agent 是 Runtime Sensor Governance™ 的现场运行组件。
 
-Agent 在机器人主控板或指定运行环境中持续24x7工作，负责四项核心能力：
+Agent 在机器人主控板或指定运行环境中持续7x24小时工作，负责四项核心能力：
 
 ## Observe
 
@@ -364,7 +364,7 @@ Post-Guard
 
 # 5. 从 Five Windows 到 Investigation Tier Candidate
 
-Five-Window Evidence Pack 生成后，Atlas 根据证据完整度、运行时 Surface 覆盖范围、异常强度和跨数据流关联，生成 Investigation Tier Candidate。
+Five-Window Evidence Pack 生成后，Atlas 根据证据完整度、运行时 Surface 覆盖范围、异常强度和跨数据流关联，生成调查对象候选 Investigation Tier Candidate。
 
 ```text
 Five-Window Evidence
@@ -378,7 +378,7 @@ Evidence Completeness
 Investigation Tier Candidate
 ```
 
-Investigation Tier Candidate 用于建议事件应进入哪一级调查流程。
+Investigation Tier Candidate 调查对象候选用于建议事件应进入哪一级调查流程。
 
 它可以帮助组织判断：
 
@@ -420,7 +420,7 @@ Runtime Sensor Governance™ 主要输出以下运行时资产：
 
 ## Investigation Tier Candidate
 
-基于证据完整度和事件特征生成的调查层级候选。
+基于证据完整度和事件特征生成的调查对象候选。
 
 ## Export Bundle
 
