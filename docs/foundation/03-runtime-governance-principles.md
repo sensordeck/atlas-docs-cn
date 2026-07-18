@@ -182,6 +182,6 @@ Atlas Runtime Governance 建立在以下七项原则之上：
 
 # 下一步阅读
 
-- Runtime Boundary
+## Products
 - Runtime Sensor Governance™
 - Runtime Investigation™
