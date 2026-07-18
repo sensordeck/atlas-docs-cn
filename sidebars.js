@@ -1,4 +1,6 @@
-// sidebars.js
+/**
+ * Atlas Runtime Governance Documentation
+ */
 
 module.exports = {
   docs: [
@@ -6,10 +8,10 @@ module.exports = {
 
     {
       type: "category",
-      label: "Foundation",
+      label: "基础理论",
       link: {
         type: "generated-index",
-        title: "Foundation",
+        title: "基础理论",
       },
       items: [
         {
@@ -21,10 +23,10 @@ module.exports = {
 
     {
       type: "category",
-      label: "Products",
+      label: "产品体系",
       link: {
         type: "generated-index",
-        title: "Products",
+        title: "产品体系",
       },
       items: [
         {
@@ -36,10 +38,10 @@ module.exports = {
 
     {
       type: "category",
-      label: "Platform",
+      label: "平台架构",
       link: {
         type: "generated-index",
-        title: "Platform",
+        title: "平台架构",
       },
       items: [
         {
@@ -51,10 +53,10 @@ module.exports = {
 
     {
       type: "category",
-      label: "Deployment",
+      label: "部署指南",
       link: {
         type: "generated-index",
-        title: "Deployment",
+        title: "部署指南",
       },
       items: [
         {
@@ -66,10 +68,10 @@ module.exports = {
 
     {
       type: "category",
-      label: "Reference",
+      label: "参考资料",
       link: {
         type: "generated-index",
-        title: "Reference",
+        title: "参考资料",
       },
       items: [
         {
