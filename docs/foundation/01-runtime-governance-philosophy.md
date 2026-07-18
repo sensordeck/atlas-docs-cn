@@ -170,5 +170,4 @@ Atlas 坚持以下原则：
 # 下一步阅读
 
 - Why Atlas
-- Runtime Sensor Governance™
-- Runtime Investigation™
+- Runtime Governance Principle™
