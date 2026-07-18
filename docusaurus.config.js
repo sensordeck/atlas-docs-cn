@@ -3,8 +3,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Atlas Runtime Governance Documentation',
-  tagline: '机器人运行时传感器治理与调查基础设施',
+  title: 'Atlas Runtime Governance',
+  tagline: '机器人运行时治理基础设施',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -33,10 +33,12 @@ const config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.js',
           routeBasePath: '/',
+          sidebarPath: './sidebars.js',
+
           editUrl:
             'https://github.com/sensordeck/atlas-docs-cn/edit/main/',
+
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
         },
@@ -53,14 +55,6 @@ const config = {
   themeConfig: {
     image: 'img/SensorDeck.png',
 
-    metadata: [
-      {
-        name: 'description',
-        content:
-          'Atlas 为机器人 OEM 与传感器厂商建立统一、可复现、可回放并可持续复用的运行时证据与调查体系。',
-      },
-    ],
-
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
@@ -68,6 +62,7 @@ const config = {
 
     navbar: {
       title: 'Atlas Runtime Governance',
+
       logo: {
         alt: 'SensorDeck',
         src: 'img/SensorDeck.png',
@@ -76,15 +71,17 @@ const config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'docs',
           position: 'left',
           label: 'Documentation',
         },
+
         {
           href: 'https://sensordeck.tech',
-          label: 'SensorDeck',
+          label: 'Website',
           position: 'right',
         },
+
         {
           href: 'https://github.com/sensordeck/atlas-docs-cn',
           label: 'GitHub',
@@ -98,41 +95,27 @@ const config = {
 
       links: [
         {
-          title: 'Atlas',
+          title: 'Documentation',
           items: [
             {
-              label: 'Runtime Governance',
-              to: '/',
+              label: 'Foundation',
+              to: '/foundation/01-runtime-governance-philosophy',
             },
             {
-              label: 'Runtime Sensor Governance™',
-              to: '/',
+              label: 'Products',
+              to: '/products/04-runtime-sensor-governance',
             },
             {
-              label: 'Runtime Investigation™',
-              to: '/',
-            },
-          ],
-        },
-
-        {
-          title: '现有技术文档',
-          items: [
-            {
-              label: '传感器同步',
-              to: '/software/sensor-synchronization',
+              label: 'Platform',
+              to: '/platform/06-atlas-agent',
             },
             {
-              label: '硬件架构',
-              to: '/hardware/fusion-platform',
+              label: 'Deployment',
+              to: '/deployment/16-oem-deployment',
             },
             {
-              label: 'DSIL SDK',
-              to: '/software/DSIL-SDK',
-            },
-            {
-              label: 'ROS2 集成',
-              to: '/software/ros2-integration',
+              label: 'Reference',
+              to: '/reference/16-faq',
             },
           ],
         },
@@ -141,7 +124,7 @@ const config = {
           title: 'SensorDeck',
           items: [
             {
-              label: '官方网站',
+              label: 'Website',
               href: 'https://sensordeck.tech',
             },
             {
@@ -157,7 +140,7 @@ const config = {
 
     tableOfContents: {
       minHeadingLevel: 2,
-      maxHeadingLevel: 2,
+      maxHeadingLevel: 3,
     },
 
     prism: {
