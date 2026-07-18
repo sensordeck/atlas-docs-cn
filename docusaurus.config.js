@@ -1,5 +1,5 @@
 // @ts-check
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -73,12 +73,12 @@ const config = {
           type: 'docSidebar',
           sidebarId: 'docs',
           position: 'left',
-          label: 'Documentation',
+          label: '技术文档',
         },
 
         {
           href: 'https://sensordeck.tech',
-          label: 'Website',
+          label: '官方网站',
           position: 'right',
         },
 
@@ -95,27 +95,41 @@ const config = {
 
       links: [
         {
-          title: 'Documentation',
+          title: '文档导航',
           items: [
             {
-              label: 'Foundation',
+              label: '基础理论',
               to: '/foundation/01-runtime-governance-philosophy',
             },
             {
-              label: 'Products',
+              label: '产品体系',
               to: '/products/04-runtime-sensor-governance',
             },
             {
-              label: 'Platform',
+              label: '平台架构',
               to: '/platform/06-atlas-agent',
             },
             {
-              label: 'Deployment',
+              label: '部署指南',
               to: '/deployment/16-oem-deployment',
             },
             {
-              label: 'Reference',
+              label: '参考资料',
               to: '/reference/16-faq',
+            },
+          ],
+        },
+
+        {
+          title: '产品体系',
+          items: [
+            {
+              label: 'Runtime Sensor Governance™',
+              to: '/products/04-runtime-sensor-governance',
+            },
+            {
+              label: 'Runtime Investigation™',
+              to: '/products/05-runtime-investigation',
             },
           ],
         },
@@ -124,8 +138,12 @@ const config = {
           title: 'SensorDeck',
           items: [
             {
-              label: 'Website',
+              label: '官方网站',
               href: 'https://sensordeck.tech',
+            },
+            {
+              label: 'Atlas 中文文档',
+              href: 'https://sensordeck.github.io/atlas-docs-cn/',
             },
             {
               label: 'GitHub',
@@ -135,7 +153,7 @@ const config = {
         },
       ],
 
-      copyright: `Copyright © ${new Date().getFullYear()} SensorDeck Inc.`,
+      copyright: `© ${new Date().getFullYear()} SensorDeck Inc. All Rights Reserved.`,
     },
 
     tableOfContents: {
