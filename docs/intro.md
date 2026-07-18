@@ -1,189 +1,256 @@
 ---
 id: intro
-title: Atlas 天枢开发文档
-sidebar_label: Atlas 天枢开发文档
+title: Atlas Runtime Sensor Governance™
+sidebar_label: Atlas Runtime Sensor Governance™
 slug: /
 ---
 
-# 天枢系列开发文档 | Atlas 开发文档
+# Atlas Runtime Sensor Governance™
 
-### 面向机器人系统的确定性传感器基础设施
+## 机器人运行时传感器治理基础设施
 
-为 IMU、GNSS、LiDAR 等多源传感器提供 **微秒级统一时间基准**。  
-天枢系列（Atlas）是一套面向确定性机器人应用的高吞吐传感器基础设施。
+Atlas 是一套面向机器人 OEM 与传感器厂商的运行时治理基础设施。
 
-Atlas 天枢系列在机器人系统中引入：
+不同于传统传感器 SDK、驱动程序或日志工具，Atlas 持续观察机器人运行时环境，将海量运行时数据组织成可调查、可复用、可持续积累的工程资产。
 
-- 硬件级时间权威（Time Authority）
-- 统一的传感器集成层（Sensor Infrastructure Layer）
+Atlas 不替代 ROS2。
 
-不同于传统“传感器直连算力平台”的模式，Atlas 在中间建立一层 **专用基础设施层**，用于：
+Atlas 不替代驱动。
 
-- 传感器时间同步  
-- 数据流聚合  
-- 感知链路标准化  
+Atlas 不替代 OEM 工具链。
 
-从而将“传感器集成”从一次性工程问题，转变为 **可复用的系统能力**。
+Atlas 建立的是机器人行业此前不存在的一层：
+
+> **Runtime Sensor Governance Infrastructure™**
 
 ---
 
-## 为真实机器人系统设计
+## Atlas 解决什么问题？
 
-![Atlas 3cards](/img/3cards.png)
+机器人部署之后。
 
----
+真正困难的不是开发。
 
-## 🚀 快速上手（ROS2 几分钟接入）
+而是运行。
 
-Atlas 可以直接接入现有 ROS2 技术栈，无需修改现有驱动。
+机器人每天运行于：
 
-### 运行：
+- 餐厅
+- 医院
+- 酒店
+- 仓库
+- 商场
 
-```bash
-atlas_start
-ros2 launch atlas_dsil_bridge telemetry.launch.py
-```
+不同光照。
 
-系统行为
+不同网络。
 
-### 启动后，Atlas 会在 ROS2 中发布标准化遥测：
+不同温度。
 
-```bash
-- `/atlas/status` → 系统健康状态
-- `/atlas/pps` → timing 信号状态
-- `/atlas/sync_drift` → 实时同步误差
-```
+不同震动。
 
-## 对比效果
+不同供电。
 
-### 未使用 Atlas
+不同 Linux Runtime。
 
-- 传感器各自独立时钟  
-- 时间漂移不可控  
-- 系统调试困难  
+不同 Sensor Runtime。
 
-### 使用 Atlas
+同一套机器人。
 
-- 统一硬件时间基准  
-- 确定性时间对齐  
-- 可观测的同步状态  
+每天都可能遇到不同运行时环境。
+
+Atlas 的目标，就是持续观察这些运行时行为，并将每一次调查沉淀为组织能力。
 
 ---
 
-## 集成特性
+## Atlas 两条产品线
 
-- 无需修改现有驱动  
-- 无需更改传感器固件  
-- 与 ROS2 完全兼容  
+### Atlas Runtime Sensor Governance™
 
----
+面向：
 
-## Atlas 核心能力
+Sensor Manufacturer
 
-### 1. 时间权威
-Atlas 为所有连接的传感器建立一个单一的硬件时间权威，确保整个感知技术栈获得一致且确定性的时间戳。
+帮助传感器厂：
 
-### 2. 统一传感器集成
-Atlas 将异构的传感器接口和电源整合到一个结构化的单一集成层中，从而减少布线复杂性，并消除碎片化的电源架构。
-
-### 3. 系统可观测性与同步
-Atlas 通过统一的遥测层暴露 timing 关系、同步状态和传感器健康状况，从而在 ROS2 环境中实现完整的系统可观测性和确定性的数据对齐。
-
-### 4. 跨SKU基础设施
-Atlas 提供了一个可重用的传感器基础设施层，可跨不同的机器人平台和产品SKU进行扩展，消除了重复的集成工作，从而加快产品开发周期。
-
-## Atlas 架构
-
-Atlas 位于传感器域和机器人计算平台之间。
-
-![Atlas 架构](/img/catalog2.png)
-
-传感器连接到 Atlas → Atlas 对它们进行同步和聚合 → 机器人计算平台接收到一个时间对齐、统一的感知流水线。
+- 建立运行时档案 Runtime Profiles 
+- 保存运行时历史排查案例 Runtime Historical Runtime Governance Asset (RGA) Recall
+- 与 OEM 协同调查工作流程 Engagement Pack (EGP)
+- 建立传感器知识库 Sensor Knowledge Vault
 
 ---
 
-## Atlas 快速入门指南
+### Atlas Runtime Investigation™
 
-Atlas 文档采用循序渐进的系统化结构设计。
+面向：
 
-为全面理解 Atlas 的工作原理及其与机器人平台的集成方式，建议按以下顺序阅读：
+Robot OEM
 
----
+帮助 OEM：
 
-### 1. [传感器同步](/software/sensor-synchronization)
-
-理解 Atlas 所要解决的核心问题。
-
-了解为何独立的传感器时间戳会导致感知不一致、SLAM 不稳定以及调试困难。
-
-👉 **定义问题空间**
-
-### 2. [硬件架构](/hardware/fusion-platform)
-
-了解 Atlas 如何在物理层面实现同步。
-
-Atlas 建立了传感器域边界，统一了所有传感器的时间同步、供电和连接。
-
-👉 **定义系统架构**
-
-### 3. [DSIL 软件开发包](/software/DSIL-SDK)
-
-了解 Atlas 硬件如何通过软件实现其价值。
-
-DSIL 将硬件时序转换为同步的 ROS2 时间戳、结构化遥测数据，并提供系统可观测性。
-
-👉 **定义基础设施层**
-
-### 4. [ROS2 集成](/software/ros2-integration)
-
-将 Atlas 部署到您现有的机器人技术栈中。
-
-Atlas 无需修改驱动程序或处理流程即可集成，实现快速部署。
-
-👉 **定义集成模型**
-
-### 5. [Atlas 白标 OEM 集成试点计划](/evaluation/oem-pilot)
-
-了解 Atlas 如何从评估阶段进入 OEM 量产集成。
-
-该页面说明如何在真实机器人系统中进行验证、系统级集成以及生产部署路径。
-
-👉 **定义生产落地路径**
-
-### 核心收益
-
-遵循此架构，Atlas 将传感器集成从：
-
-**定制化工程工作 → 可部署的基础设施**
-
-- 确定性传感器时序
-- 统一的传感器接口
-- 降低集成复杂度
-- 提升系统可观测性
-
-## 下一步
-
-在真实系统中验证 Atlas：
-
-👉 [**申请 Atlas 评估套件**](/software/evaluation-kit)
-
-- 硬件同步  
-- 统一供电  
-- 接口整合  
+- 持续采集 Runtime Dataset
+- 自动生成证据包 Evidence Pack (EP)
+- 排查历史案例匹配 Historical RGA Recall
+- 与 传感器厂协同调查工作流程 Sensor Engagement Pack (SEGP)
+- 建立排查知识库 Assist Vault
+- 生成运行时调查总览 CTO REF Dashboard
 
 ---
 
-## 资源
+## 运行时调查工作流程 Runtime Investigation Workflow
 
-- 👉 [集成问答 FAQ](/evaluation/faq)
-- 👉 [下载中心](/evaluation/download)
+Runtime Dataset
 
-## Atlas 天枢系列
+↓
 
-Atlas 是机器人系统的：
+Evidence Pack
 
-**确定性传感器基础设施层**
+↓
 
-将传感器集成从“工程问题”转变为“系统能力”。
+Historical RGA Recall
 
-👉 通过 [评估套件](/software/evaluation-kit) 在您的系统中探索 Atlas 天枢
+↓
+
+Investigation Context
+
+↓
+
+Sensor Engagement Pack
+
+↓
+
+OEM Investigation
+
+↓
+
+Sensor Investigation
+
+↓
+
+IR + LL (调查结果 Investigation Result + 经验分享 Lesson Learned)
+
+↓
+
+Ticket Closure (工单关闭）
+
+↓
+
+Assist Vault
+
+↓
+
+Future Reuse
+
+---
+
+## Atlas Platform
+
+Atlas Platform 由七个基础能力组成：
+
+- Atlas Agent™
+- Runtime Dataset™
+- Evidence Pack™
+- Historical RGA™
+- Investigation Workspace™
+- Sensor Engagement Pack™
+- Assist Vault™
+
+所有产品共享同一平台。
+
+---
+
+## Atlas Boundary
+
+Atlas 只治理这一段：
+
+Sensor
+
+↓
+
+Power / USB / Ethernet / CAN / CSI
+
+↓
+
+Linux Runtime
+
+↓
+
+ROS Input
+
+↓
+
+Investigation
+
+Atlas 不做：
+
+- Root Cause Confirmation （根因确认）
+- Liability Assignment （责任归属）
+- AI Auto Diagnosis （AI 自动诊断）
+
+IR 与 LL 永远由工程师完成。
+
+---
+
+## Documentation Structure
+
+建议阅读顺序：
+
+1 Runtime Sensor Governance™
+
+2 Runtime Investigation™
+
+3 Atlas Platform™
+
+4 Runtime Boundary™
+
+5 Evidence Pack™
+
+6 Historical RGA™
+
+7 Investigation Workflow™
+
+8 Sensor Engagement Pack™
+
+9 Atlas Agent™
+
+10 OEM Integration
+
+---
+
+## White Papers
+
+- Runtime Sensor Governance™
+
+- Runtime Investigation™
+
+- Evidence Pack™
+
+- Historical RGA™
+
+- Runtime Boundary™
+
+---
+
+## Documentation
+
+本网站介绍 Atlas。
+
+完整开发文档：
+
+https://docs.sensordeck.tech
+
+https://sensordeck.github.io/atlas-docs-cn/
+
+---
+
+## Request Demo
+
+体验：
+
+Runtime Sensor Governance™
+
+Runtime Investigation™
+
+Architecture Review
+
+Pilot Deployment
