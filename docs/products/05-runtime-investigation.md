@@ -703,6 +703,7 @@ Runtime Investigation™ 支持：
 
 - REF Intake
 - Admission Policy
+- Historical RGA & Assist Vault 预建
 - Evidence Pack 引用
 - Historical RGA Recall
 - Partial Match Recall
