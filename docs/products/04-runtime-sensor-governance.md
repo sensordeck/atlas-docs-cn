@@ -3,583 +3,599 @@ title: Runtime Sensor Governance™
 sidebar_label: Runtime Sensor Governance™
 ---
 
-# Runtime Sensor Governance™
+# Atlas Runtime Sensor Governance™
 
-## Overview
+## 概述
 
-Atlas Runtime Sensor Governance™ 是一套面向机器人传感器运行时边界的持续观察、证据保留与事件窗口生成系统。
+机器人部署之后，真正的传感器问题才刚刚开始。
 
-它将传感器、总线、电源、Linux Runtime、Driver 与 ROS Topic 之间分散的运行时数据，组织为可保留、可导出、可调查的 Runtime Evidence。
+同一款激光雷达、相机、IMU、毫米波雷达或编码器，在不同 OEM、不同机器人平台、不同 Linux Runtime、不同 Driver、不同 ROS Middleware、不同供电条件以及不同真实运行环境下，都可能表现出完全不同的运行时行为。
 
-Runtime Sensor Governance™ 的核心不是生成更多日志，而是建立一条由Atlas Agent持续观查的运行时证据链：
+大量 Sensor FAE 的工作，并不是验证传感器本身是否正常，而是在回答：
+
+> **为什么这颗已经通过出厂测试的传感器，在真实机器人上运行时出现异常？**
+
+传统 Sensor FAE 调查通常依赖：
+
+- 客户提供零散日志
+- 微信、Email 往返沟通
+- 人工复现
+- 工程师个人经验
+- 重复排查已经调查过的问题
+
+每一次调查几乎都重新开始。
+
+Atlas Runtime Sensor Governance™ 不是新的日志工具，也不是新的测试软件。
+
+它是一套专门面向**传感器制造商（Sensor Vendor）**设计的运行时治理基础设施（Runtime Governance Infrastructure），帮助传感器企业持续了解产品在真实机器人部署中的运行时表现，建立 Runtime Profile，接收 OEM Engagement Pack™（EGP），组织 Sensor FAE 工程调查，并将 Investigation Result（IR）、Lesson Learned（LL）与 Historical Runtime Governance Asset（Historical RGA™）持续沉淀为企业自己的运行时知识资产。
+
+最终让 Sensor FAE 从一次性问题处理，演变为持续成长的组织能力。
+
+---
+
+# Runtime Sensor Governance™ 的定位
+
+Atlas Runtime Sensor Governance™ 服务于传感器制造商。
+
+它连接：
+
+- OEM Robot Company
+- Sensor Vendor
+- Sensor FAE Team
+- Atlas Runtime Evidence
+- Historical Runtime Governance Asset™
+
+形成持续成长的调查闭环。
+
+整个产品围绕一个目标：
+
+> **让每一次调查，都成为下一次调查的起点。**
+
+---
+
+# 核心价值
+
+## 持续了解真实部署表现
+
+实验室环境永远无法覆盖真实世界。
+
+Atlas 持续帮助传感器厂商观察：
+
+- 不同 OEM
+- 不同机器人平台
+- 不同 Runtime Environment
+- 不同 Linux Distribution
+- 不同 Driver Version
+- 不同 ROS Version
+- 不同 Sensor Firmware
+
+形成持续增长的 Runtime Deployment Profile™。
+
+---
+
+## 建立企业自己的 Runtime Memory™
+
+多数 Sensor FAE 工程师都会经历同样的问题：
+
+> 去年有人调查过。
+>
+> 但是没人知道是谁。
+>
+> 没人知道调查结果。
+>
+> 更没人知道如何复用。
+
+Atlas 将所有调查沉淀为：
+
+- Investigation Result（IR）
+- Lesson Learned（LL）
+- Runtime Evidence
+- Runtime Boundary
+- Historical RGA™
+
+形成企业长期积累的 Runtime Memory™。
+
+经验不再随着人员流失而消失。
+
+---
+
+## 不再重复调查
+
+Atlas 会自动关联：
+
+- Runtime Profile
+- Sensor SKU
+- OEM
+- Runtime Boundary
+- Historical RGA™
+
+帮助 Sensor FAE 在调查开始之前，就找到历史相似案例。
+
+调查从：
+
+> 从零开始
+
+变成：
+
+> 从历史开始。
+
+---
+
+## 建立 Sensor Runtime Governance™
+
+Atlas 不只是帮助完成一次调查。
+
+它帮助企业建立长期运行时治理能力：
+
+- Runtime Observation
+- Runtime Evidence
+- Runtime Investigation
+- Runtime Knowledge
+- Runtime Governance
+
+形成持续成长的 Runtime Governance Flywheel。
+
+---
+
+# Runtime Governance Flywheel
+
+每一次调查都会推动下一次调查更加高效。
 
 ```text
-Observe
-    ↓
-Persist
-    ↓
-Retain
-    ↓
-Export
+真实部署
+
+↓
+
+Runtime Observation
+
+↓
+
+Evidence Pack™
+
+↓
+
+Sensor Investigation
+
+↓
+
+Investigation Result (IR)
+
+↓
+
+Lesson Learned (LL)
+
+↓
+
+Historical RGA™
+
+↓
+
+Assist Vault™
+
+↓
+
+下一次调查自动召回
 ```
 
-当 Runtime Execution Failure（REF）发生时，Atlas 可以根据人工提供的事件时段，或运行时异常与跨数据流关联，生成标准化 Evidence Pack，并进一步形成调查对象候选 Investigation Tier Candidate。
+Atlas 让 Runtime Knowledge 持续增长，而不是不断流失。
 
 ---
 
-# 核心运行链路
+# 核心能力
 
-```text
-Sensor / Bus / Power / Linux Runtime / ROS Topic
-                         │
-                         ▼
-                    Atlas Agent
-                         │
-          Observe → Persist → Retain → Export
-                         │
-                         ▼
-                  Runtime Dataset
-                         │
-          ┌──────────────┴──────────────┐
-          │                             │
-          ▼                             ▼
- Manual REF Window                 Automatic Detection
- Tier 1 提供约莫时段               Dataset Abnormal
-          │                        Cross-stream Correlation
-          └──────────────┬──────────────┘
-                         ▼
-                 Five-Window Slicing
-                         │
-                         ▼
-                   Evidence Pack
-                         │
-                         ▼
-             Investigation Tier Candidate
-```
+## Runtime Profile™
+
+建立跨 OEM、跨 Robot Platform、跨 Sensor SKU 的运行时部署画像。
+
+包括但不限于：
+
+- Sensor SKU
+- Firmware Version
+- Driver Version
+- Runtime Environment
+- Linux Distribution
+- ROS Version
+- CPU Platform
+- Network Architecture
+- Time Synchronization
+- Deployment Scenario
+- Power Boundary
+- Communication Boundary
+
+Runtime Profile 成为所有调查的上下文。
 
 ---
 
-# 1. Atlas Agent
+## Runtime Observation™
 
-Atlas Agent 是 Runtime Sensor Governance™ 的现场运行组件。
+Atlas Agent 持续运行于机器人系统。
 
-Agent 在机器人主控板或指定运行环境中持续7x24小时工作，负责四项核心能力：
+持续观察：
 
-## Observe
-
-持续观察运行时状态，包括：
-
-- Sensor data continuity
-- Sensor metadata
-- Timestamp behaviour
-- Power-related signals
-- USB / Ethernet / CAN / MIPI 状态
-- Linux Runtime 状态
-- Driver Runtime 状态
-- ROS Topic frequency
-- Runtime Event
-- Surface availability
-
-Observe 的目标不是立即判断根因，而是持续建立运行时事实记录。
-
----
-
-## Persist
-
-将观察到的运行时数据持续写入 Runtime Dataset。
-
-Persist 确保事件发生前后的运行状态不会只存在于瞬时内存或临时日志中。
-
-Persist 的数据可以包括：
-
-- Runtime metadata
-- Timestamp records
-- Topic frequency
-- Connectivity status
-- Kernel and driver events
-- Sensor status
-- Surface snapshots
-- Event markers
-- Correlation signals
-
-具体采集内容由部署范围、Surface Registry 和数据策略决定。
-
----
-
-## Retain
-
-按照 Retention Policy 保留历史运行时数据。
-
-Retention Policy 可以定义：
-
-- 保留时长
-- 数据粒度
-- 数据类型
-- 循环保留空间
-- 事件前后窗口
-- 本地保留范围
-- 导出条件
-- 客户数据所有权要求
-
-Atlas 不要求无限保存所有原始数据。
-
-它的目标是在成本、隐私、存储空间和调查价值之间建立可执行的保留策略。
-
----
-
-## Export
-
-按照授权将运行时数据或 Evidence Pack 导出至：
-
-- OEM REF 调查服务器
-- 指定本地目录
-- 客户私有存储
-- Investigation Workspace
-- Sensor Manufacturer 协作流程
-
-Export 由客户策略控制。
-
-Atlas 不要求客户运行时数据进入 SensorDeck 外部数据平台。
-
----
-
-# 2. Runtime Dataset
-
-Runtime Dataset 是 Atlas Agent 持续观察并保留的运行时数据集合。
-
-它不是单一日志文件，而是多个 Runtime Surface 在统一时间轴下形成的调查数据基础。
-
-Runtime Dataset 可以覆盖：
-
-```text
-Sensor
-    ↓
-Power / Bus
-    ↓
-Linux Runtime
-    ↓
-Driver
-    ↓
-ROS Topic
-```
-
-典型数据包括：
-
-- Sensor availability
-- Packet or frame continuity
-- Topic frequency
-- Timestamp continuity
-- Power-event metadata
-- Device reconnect events
-- Driver lifecycle events
-- Linux runtime disturbances
-- Runtime surface status
-- Controlled event markers
-
-Runtime Dataset 是 Evidence Pack 的来源，但 Runtime Dataset 本身不等于 Evidence Pack。
-
----
-
-# 3. Evidence Pack 如何生成？
-
-Evidence Pack（EP）是围绕特定 REF 时段生成的标准化运行时证据包。
-
-Atlas 支持两种主要生成方式。
-
----
-
-## 3.1 手动生成：T0 / Tier 1 提供约莫 REF 时段
-
-在许多真实事故中，最终用户只能提供大约时间，例如：
-
-> “机器人在下午 2:30 左右突然停住。”
-
-Tier 1 首先记录：
-
-- 客户报告时间
-- 设备或机器人编号
-- 部署地点
-- REF 类型候选
-- 大约发生时段
-- 事件前后可见现象
-- Runtime Dataset 是否可用
-
-这一步属于 T0 Intake。
-
-Tier 1 不需要确认精确故障时刻，也不需要完成技术判断。
-
-Atlas 根据最终用户提供的约莫 REF 时段，在 Runtime Dataset 中建立初始事件中心点，并向前、向后扩展证据范围。
-
-```text
-最终用户提供约莫时段
-          ↓
-Tier 1 建立 T0 Intake
-          ↓
-Atlas 定位候选时间范围
-          ↓
-Five-Window Slicing
-          ↓
-Evidence Pack
-```
-
-这种方式适用于：
-
-- 客户电话报障
-- 售后工单
-- 人工观察到异常
-- 没有明确机器触发事件
-- 只能确认大约时间范围
-
----
-
-## 3.2 自动生成：Dataset Abnormal + Cross-stream Correlation
-
-Atlas Agent 也可以根据 Runtime Dataset 中的异常及相关性，自动建立候选事件窗口。
-
-自动触发可以来自单一数据流异常，例如：
-
-- LiDAR topic frequency 归零
-- Camera frame interruption
-- USB device disconnect
-- Ethernet packet interruption
-- Driver process disappearance
-- Timestamp discontinuity
-- CPU or memory disturbance
-
-也可以来自多个 Runtime Surface 之间的关联，例如：
-
-- Timing anomaly 与 sensor interruption 同时出现
-- Power event 与 USB reconnect 时间一致
-- Driver lifecycle event 与 ROS Topic 停止相关
-- Network packet loss 与 LiDAR point cloud disappearance 相关
-- Linux disturbance 与 camera frame stall 时间重叠
-
-```text
-Dataset Abnormal
-        +
-Cross-stream Correlation
-        ↓
-Candidate Event Time
-        ↓
-Five-Window Slicing
-        ↓
-Evidence Pack
-```
-
-Atlas 在这里生成的是：
-
-- Candidate event
-- Candidate correlation
-- Candidate investigation direction
-
-Atlas 不因此自动确认：
-
-- Root cause
-- Causality
-- Liability
-
-关联关系是调查入口，不是最终工程结论。
-
----
-
-# 4. Five-Window Evidence Model
-
-Atlas 不只截取异常发生的一瞬间。
-
-每个 Evidence Pack 按五段时间窗口组织，以保留异常前、异常中和恢复后的完整运行时变化。
-
-```text
-Pre-Guard
-    ↓
-Baseline
-    ↓
-Deviation
-    ↓
-Recovery
-    ↓
-Post-Guard
-```
-
----
-
-## Pre-Guard
-
-保留事件前较早阶段的运行状态。
-
-用途：
-
-- 确认系统此前是否已经出现弱异常
-- 观察异常是否逐步形成
-- 避免只看到事故瞬间
-
----
-
-## Baseline
-
-建立事件发生前的正常运行参考。
-
-用途：
-
-- 确认正常频率、连续性与连接状态
-- 为 Deviation 提供对比基础
-- 识别正常行为与异常行为的差异
-
----
-
-## Deviation
-
-记录主要异常出现和发展的时间段。
-
-用途：
-
-- 聚合关键运行时变化
-- 对齐多个 Runtime Surface
-- 形成调查候选窗口
-
----
-
-## Recovery
-
-记录系统恢复、重连、重启或持续失败阶段。
-
-用途：
-
-- 判断是否自动恢复
-- 观察恢复顺序
-- 记录重连、重启与恢复行为
-
----
-
-## Post-Guard
-
-保留恢复后的运行状态。
-
-用途：
-
-- 验证恢复是否稳定
-- 判断异常是否重复发生
-- 防止把短暂恢复误认为完整恢复
-
----
-
-# 5. 从 Five Windows 到 Investigation Tier Candidate
-
-Five-Window Evidence Pack 生成后，Atlas 根据证据完整度、运行时 Surface 覆盖范围、异常强度和跨数据流关联，生成调查对象候选 Investigation Tier Candidate。
-
-```text
-Five-Window Evidence
-          ↓
-Surface Coverage
-          ↓
-Runtime Correlation
-          ↓
-Evidence Completeness
-          ↓
-Investigation Tier Candidate
-```
-
-Investigation Tier Candidate 调查对象候选用于建议事件应进入哪一级调查流程。
-
-它可以帮助组织判断：
-
-- 是否可以由 Tier 1 继续补充信息
-- 是否需要进入 Tier 2 工程调查
-- 是否需要 Tier 3 专项工程参与
-- 是否需要生成 Sensor Engagement Pack
-- 是否需要升级至 Sensor Manufacturer FAE
-
-Investigation Tier Candidate 是路由建议，不是根因结论。
-
-最终调查层级仍由客户组织根据 Admission Policy 和工程判断确认。
-
----
-
-# 6. 主要输出
-
-Runtime Sensor Governance™ 主要输出以下运行时资产：
-
-## Runtime Dataset
-
-持续保留的运行时数据基础。
-
-## Evidence Window
-
-围绕候选 REF 时段形成的五段时间窗口。
-
-## Evidence Pack
-
-面向具体 REF 的标准化运行时证据包。
-
-## Runtime Timeline
-
-将多个 Runtime Surface 对齐到统一时间轴。
-
-## Surface Coverage Snapshot
-
-说明本次 Evidence Pack 覆盖和未覆盖的 Runtime Surface。
-
-## Investigation Tier Candidate
-
-基于证据完整度和事件特征生成的调查对象候选。
-
-## Export Bundle
-
-按照客户策略导出的调查数据与完整性清单。
-
----
-
-# 7. 支持的 Runtime Boundary
-
-Atlas 主要治理以下边界：
-
-```text
-Physical Sensor
-        ↓
-Sensor Raw Output
-        ↓
-Power / USB / Ethernet / CAN / CSI / Trigger / PPS
-        ↓
-Linux Kernel / Driver / Buffer / Scheduler
-        ↓
-ROS Topic / Application Callback
-```
-
-典型 Runtime Surface 包括：
-
-- Camera
-- LiDAR
-- IMU
-- GNSS
-- USB
-- Ethernet
-- CAN
-- Power
-- Timing / PPS
-- Linux Runtime
+- Sensor Runtime
 - Driver Runtime
+- Device Runtime
+- Linux Runtime
+- ROS Runtime
+- Network Runtime
+- Power Runtime
+
+按保留策略持续保存运行时数据。
+
+真正发生 Runtime Event 时，可快速切片生成 Runtime Evidence。
+
+---
+
+## OEM Engagement Pack™（EGP）
+
+OEM 可向 Sensor Vendor 提供标准化协同调查包。
+
+EGP 包括：
+
+- Runtime Context
+- Evidence Pack
+- Runtime Boundary
+- Investigation Scope
+- Runtime Timeline
+- Robot Metadata
+- Sensor Metadata
+
+让 Sensor Vendor 从一开始便拥有完整调查上下文。
+
+---
+
+## Evidence Pack™
+
+Evidence Pack™ 将调查所需数据统一组织在同一时间轴。
+
+包括：
+
+- Runtime Timeline
+- Device Runtime
+- Driver Runtime
+- Linux Runtime
 - ROS Topic
+- Network Status
+- Sensor Health
+- Power Information
+- Runtime Event Window
 
-实际覆盖范围取决于部署配置和可访问数据。
-
----
-
-# 8. Atlas Supports
-
-Runtime Sensor Governance™ 支持：
-
-- 7×24 小时持续运行时观察
-- Runtime Dataset 持久化
-- Retention Policy 管理
-- 客户授权下的数据导出
-- Tier 1 约莫 REF 时段切片
-- Dataset abnormal 自动触发
-- Cross-stream correlation
-- Five-Window Evidence Model
-- Evidence Pack 生成
-- Runtime Timeline 对齐
-- Runtime Surface Coverage
-- Investigation Tier Candidate
-- OEM 私有环境部署
+所有证据围绕统一时间轴组织，而不是分散于不同日志。
 
 ---
 
-# 9. Atlas Does Not Support
+## Sensor REF Investigation
 
-Runtime Sensor Governance™ 不负责：
+Atlas 管理 Sensor FAE 的完整调查生命周期。
 
-- 自动确认 Root Cause
-- 自动确认因果关系
-- Liability Assignment
-- 替代 OEM 工程师
-- 替代 Sensor FAE
-- SLAM 调试
-- Navigation 调试
-- Motion Planning 调试
-- AI Model 调试
-- Robot Business Logic 调试
+包括：
 
-Atlas 负责建立运行时证据基础和调查入口。
+- Investigation Creation
+- Assignment
+- Investigation Status
+- Runtime Boundary
+- Investigation Notes
+- Evidence Review
+- Conclusion
+- Closure
 
-最终工程判断由获得授权的工程团队完成。
+所有调查过程均可追溯。
 
 ---
 
-# 10. 与 Runtime Investigation™ 的关系
+## Historical RGA™ Recall
 
-Runtime Sensor Governance™ 负责：
+调查开始时即可自动召回：
 
-```text
-Observe
-    ↓
-Persist
-    ↓
-Retain
-    ↓
-Export
-    ↓
-Evidence Pack
-    ↓
-Investigation Tier Candidate
-```
+- 相同 Sensor SKU
+- 相同 Runtime Boundary
+- 相同 Runtime Failure
+- 相同 Runtime Signature
+- 相同 OEM
+- 相似 Runtime Pattern
 
-Runtime Investigation™ 负责：
-
-```text
-REF Admission
-    ↓
-Historical RGA Recall
-    ↓
-Investigation Context
-    ↓
-OEM / Sensor Investigation
-    ↓
-Investigation Result
-    ↓
-Lesson Learned
-    ↓
-Ticket Closure
-    ↓
-Assist Vault
-```
-
-两条产品线共同构成 Atlas Runtime Governance™。
+帮助工程师快速定位方向。
 
 ---
 
-# Summary
+## Investigation Result（IR）
 
-Atlas Runtime Sensor Governance™ 不是单一的数据采集工具。
+完成调查后形成标准化 Investigation Result。
 
-它建立了一条完整的运行时证据链：
+包括：
 
-```text
-Observe
-    ↓
-Persist
-    ↓
-Retain
-    ↓
-Export
-    ↓
-Manual or Automatic Event Window
-    ↓
-Five-Window Evidence Pack
-    ↓
-Investigation Tier Candidate
-```
+- Root Cause
+- Boundary
+- Evidence
+- Fix Recommendation
+- Confidence
+- Verification
+- Customer Response
 
-Tier 1 可以根据最终用户提供的约莫 REF 时段手动启动 Evidence Pack。
-
-Atlas Agent 也可以根据 Runtime Dataset 异常和跨数据流关联自动建立候选事件窗口。
-
-Five-Window Evidence Model 保留事件发生前、异常期间及恢复后的完整运行时上下文，并为后续 Runtime Investigation 提供统一证据基础。
+IR 成为未来调查的重要参考。
 
 ---
 
-# 下一步阅读
+## Lesson Learned（LL）
 
-- Runtime Investigation™
-- Atlas Agent™
-- Runtime Dataset™
-- Evidence Pack™
-- Investigation Tier Candidate
+除调查结果之外，还保留：
+
+- 排查过程
+- 排查经验
+- 常见误区
+- 最佳实践
+- 建议检查顺序
+- Runtime Boundary Insight
+
+这些经验通常无法从日志中重新获得。
+
+---
+
+## Sensor Assist Vault™
+
+所有完成调查持续沉淀为企业自己的 Runtime Knowledge。
+
+包括：
+
+- Historical RGA™
+- Runtime Pattern
+- Runtime Signature
+- Runtime Boundary
+- Investigation Strategy
+- Engineering Experience
+
+企业越使用 Atlas，Assist Vault 越有价值。
+
+---
+
+## Non-identifiable Assist Vault™
+
+在客户授权与去标识化前提下。
+
+Atlas 可持续积累整个机器人行业已经验证过的 Runtime Pattern。
+
+共享的不是：
+
+- OEM 数据
+- 客户日志
+- 商业机密
+
+共享的是：
+
+- Runtime Pattern
+- Runtime Boundary
+- Runtime Investigation Strategy
+- Lesson Learned
+
+帮助整个行业减少重复踩坑。
+
+---
+
+# 完整工作流程
+
+## ① 建立 Runtime Profile™
+
+定义：
+
+- Sensor SKU
+- Runtime Environment
+- Robot Platform
+- Runtime Boundary
+
+建立调查基础。
+
+---
+
+## ② Runtime Observation™
+
+Atlas Agent 持续观察运行时状态。
+
+保留长期 Runtime History。
+
+---
+
+## ③ 接收 OEM Engagement Pack™
+
+OEM 提交：
+
+- Runtime Evidence
+- Investigation Context
+- Runtime Boundary
+
+开始协同调查。
+
+---
+
+## ④ 创建 Sensor REF Investigation
+
+建立正式调查工单。
+
+关联：
+
+- Runtime Profile
+- Sensor SKU
+- Evidence Pack
+- Historical RGA™
+
+---
+
+## ⑤ Historical RGA™ Recall
+
+自动搜索：
+
+- 相似 Runtime Failure
+- 相似 Runtime Signature
+- 相似 Investigation
+
+避免重复调查。
+
+---
+
+## ⑥ Sensor FAE Investigation
+
+工程师依据：
+
+- Runtime Timeline
+- Evidence Pack
+- Historical Knowledge
+
+开展系统性调查。
+
+---
+
+## ⑦ 完成 Investigation Result（IR）
+
+形成正式调查报告。
+
+包括：
+
+- Root Cause
+- Runtime Boundary
+- Verification
+- Recommendation
+
+---
+
+## ⑧ 完成 Lesson Learned（LL）
+
+记录：
+
+- 调查经验
+- 排查技巧
+- 后续建议
+
+形成组织经验。
+
+---
+
+## ⑨ 返回 EGP Response™
+
+向 OEM 返回：
+
+- Investigation Result
+- Runtime Finding
+- Recommendation
+- Updated Evidence
+
+形成完整闭环。
+
+---
+
+## ⑩ 更新 Sensor Assist Vault™
+
+将：
+
+- IR
+- LL
+- Runtime Pattern
+- Runtime Boundary
+
+全部沉淀进入知识库。
+
+成为未来调查资产。
+
+---
+
+# 核心模块
+
+Atlas Runtime Sensor Governance™ 由多个治理模块组成。
+
+| 模块 | 作用 |
+|------|------|
+| Runtime Profile™ | 建立运行时部署画像 |
+| Runtime Observation™ | 持续观察运行时行为 |
+| Atlas Agent™ | 长期运行时数据采集 |
+| OEM Engagement Pack™ | OEM 与 Sensor Vendor 协同调查入口 |
+| Evidence Pack™ | 基于统一时间轴组织运行时证据 |
+| Sensor REF Investigation | 管理调查生命周期 |
+| Historical RGA™ | 企业历史调查资产 |
+| Investigation Result™ | 标准化调查结论 |
+| Lesson Learned™ | 可复用工程经验 |
+| Sensor Assist Vault™ | 企业长期运行时知识库 |
+| Non-identifiable Assist Vault™ | 行业去标识化 Runtime Knowledge |
+
+---
+
+# 部署方式
+
+Atlas Runtime Sensor Governance™ 支持：
+
+- Sensor Vendor Lab
+- FAE Center
+- Customer Support Center
+- Runtime Investigation Center
+- Private Cloud
+- On-premise Deployment
+
+所有调查资产均由客户拥有。
+
+Atlas 不保留客户调查数据。
+
+---
+
+# 为什么选择 Atlas
+
+传统 Sensor FAE：
+
+- 每次调查重新开始
+- 数据零散
+- 工程经验依赖个人
+- 无法长期积累
+- 相同问题不断重复调查
+
+Atlas Runtime Sensor Governance™：
+
+- Runtime 持续观察
+- Runtime Evidence 标准化
+- Historical RGA 自动召回
+- Investigation 持续积累
+- 企业 Runtime Memory 持续成长
+- 每一次调查都成为组织资产
+
+Atlas 将 Sensor FAE 从：
+
+> **问题响应（Reactive Support）**
+
+升级为：
+
+> **运行时治理（Runtime Governance）。**
+
+---
+
+# 开始使用
+
+建议从：
+
+- 一个 Sensor SKU
+- 一个 OEM
+- 一个真实机器人部署项目
+
+开始建立 Runtime Governance。
+
+Pilot 项目通常包括：
+
+- Runtime Profile 建立
+- Atlas Agent 部署
+- OEM Engagement Pack™ 协作流程
+- Runtime Evidence Pack™ 生成
+- Sensor FAE Investigation
+- Historical RGA™ 建立
+- Assist Vault™ 初始化
+
+随着调查数量持续增长，企业将逐步建立属于自己的 Runtime Governance System。
+
+---
+
+# 下一步
+
+如果您正在寻找一种方式，让 Sensor FAE 不再依赖个人经验，让每一次调查持续积累，让企业拥有自己的 Runtime Memory™，欢迎联系 SensorDeck。
+
+Atlas Runtime Sensor Governance™ 将帮助您的团队：
+
+- 持续了解真实机器人部署表现
+- 标准化 OEM 协同调查流程
+- 建立 Historical Runtime Governance Asset™
+- 建立企业自己的 Sensor Assist Vault™
+- 构建长期可持续成长的 Runtime Governance Flywheel
+
+让每一次运行时调查，都成为企业未来竞争力的一部分。
