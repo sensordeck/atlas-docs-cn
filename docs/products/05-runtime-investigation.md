@@ -11,6 +11,7 @@ Atlas Runtime Investigation™ 是一套面向机器人 Runtime Execution Failur
 
 它接收来自 Runtime Sensor Governance™ 的 Evidence Pack，将运行时证据、历史调查资产、工程调查结果与关闭流程组织成一条完整链路：
 
+   ```text
     REF Intake
         ↓
     Evidence Pack
@@ -32,6 +33,7 @@ Atlas Runtime Investigation™ 是一套面向机器人 Runtime Execution Failur
     Assist Vault
         ↓
     Future REF Reuse
+```
 
 Runtime Investigation™ 的目标不是替代工程师，也不是自动确认根因。
 
