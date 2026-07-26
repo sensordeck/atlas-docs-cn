@@ -157,7 +157,7 @@ Atlas 使用统一的 Runtime Governance Model，在产品差异之上保持一�
 
 ### 跨 Sensor SKU
 
-同一传感器厂商可以在统一治理框架下管理 LiDAR、Camera、IMU、GNSS、Radar 等不同产品。
+同一传感器厂商可以在统一治理框架下管理不同 OEM 客户，不同部署场景， 不同sku，不同型号的产品。
 
 ### 跨 Host Platform
 
